@@ -1228,7 +1228,7 @@ textarea:focus-visible {
 }
 
 /* ============================================================
-   FAQ
+   FAQ (Updated details & summary design)
    ============================================================ */
 .faq-list {
   display: flex;
@@ -1236,66 +1236,64 @@ textarea:focus-visible {
   gap: 12px;
 }
 
-.faq-item {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: var(--transition);
-}
-
-.faq-item:hover {
-  border-color: var(--border-hover);
-}
-
-.faq-question-btn {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 22px;
-  background: transparent;
-  border: none;
+/* Details Accordion Styling */
+details.faq-item {
+  background: var(--bg-card, #161b22);
+  border: 1px solid var(--border, #30363d);
+  border-radius: var(--radius, 8px);
+  padding: 14px 18px;
   cursor: pointer;
+  transition: border-color 0.2s ease, background 0.3s ease;
+}
+
+details.faq-item:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+details.faq-item summary {
   font-family: var(--font);
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-primary);
-  transition: var(--transition);
-  text-align: left;
-  gap: 16px;
-  min-height: 56px;
-}
-
-.faq-question-btn:hover {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.faq-question-btn .faq-icon {
-  flex-shrink: 0;
-  color: var(--text-muted);
+  list-style: none; /* Hide default triangle arrow */
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  min-height: 28px;
+  outline: none;
 }
 
-.faq-question-btn .faq-icon svg {
-  width: 16px;
-  height: 16px;
-  stroke: currentColor;
-  transition: transform 0.3s ease;
+details.faq-item summary:focus-visible {
+  outline: 2px solid var(--text-primary);
+  border-radius: 4px;
 }
 
-.faq-question-btn[aria-expanded="true"] .faq-icon svg {
+/* Hide WebKit default marker */
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom dropdown icon */
+details.faq-item summary::after {
+  content: '⌄';
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Rotate icon when open */
+details[open].faq-item summary::after {
   transform: rotate(180deg);
+  color: var(--text-primary);
 }
 
 .faq-answer {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  padding: 0 22px;
-  background: var(--bg-card);
-  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .faq-answer p {
@@ -1545,7 +1543,9 @@ textarea:focus-visible {
 }
 
 /* ============================================================
-   FAQ TOGGLE BUTTON (Title + Arrow)
+   FAQ TOGGLE BUTTON (Title + Arrow) 
+   [Kept for compatibility, though you can delete this section 
+   if you removed the old toggle button from HTML]
    ============================================================ */
 #faqToggleBtn {
   cursor: pointer;
@@ -1601,8 +1601,12 @@ textarea:focus-visible {
   .edu-sub-heading { font-size: 1rem; margin-bottom: 18px; }
   .exp-content { padding: 18px; }
   .exp-title { font-size: 0.95rem; }
-  .faq-question-btn { font-size: 0.85rem; padding: 14px 16px; min-height: 48px; }
+  
+  /* Details FAQ Mobile Tweaks */
+  details.faq-item { padding: 12px 14px; }
+  details.faq-item summary { font-size: 0.85rem; min-height: 24px; }
   .faq-answer p { font-size: 0.8rem; }
+  
   .footer { padding: 50px 20px 28px; }
   .footer-title { font-size: 1.5rem; }
   .back-top { bottom: 18px; right: 18px; width: 36px; height: 36px; }
@@ -1611,13 +1615,8 @@ textarea:focus-visible {
   .btn-submit { width: 100%; justify-content: center; }
   .filter-bar { gap: 8px; margin-bottom: 24px; }
   .filter-btn { font-size: 0.7rem; padding: 6px 14px; min-height: 36px; }
-  /* FAQ & Contact gap fix for mobile */
-  .section-faq {
-    padding-bottom: 5px !important;
-  }
-  .section-contact {
-    padding-top: 5px !important;
-  }
+  .section-faq { padding-bottom: 5px !important; }
+  .section-contact { padding-top: 5px !important; }
 }
 
 @media (max-width: 480px) {
@@ -1632,14 +1631,13 @@ textarea:focus-visible {
   .edu-content { padding: 14px; }
   .edu-sub-heading { font-size: 0.9rem; }
   .exp-content { padding: 14px; }
-  .faq-question-btn { font-size: 0.8rem; padding: 12px 14px; min-height: 44px; }
+  
+  /* Details FAQ Mobile Mini Tweaks */
+  details.faq-item { padding: 10px 12px; }
+  details.faq-item summary { font-size: 0.8rem; }
+  
   .filter-bar { gap: 6px; margin-bottom: 20px; }
   .filter-btn { font-size: 0.65rem; padding: 5px 12px; min-height: 32px; }
-  /* FAQ & Contact gap fix for small mobile */
-  .section-faq {
-    padding-bottom: 2px !important;
-  }
-  .section-contact {
-    padding-top: 2px !important;
-  }
+  .section-faq { padding-bottom: 2px !important; }
+  .section-contact { padding-top: 2px !important; }
 }
