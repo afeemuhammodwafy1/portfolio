@@ -266,7 +266,7 @@ if (scrollIndicator) {
 }
 
 // ============================================================
-// FAQ TOGGLE
+// FAQ TOGGLE (Individual)
 // ============================================================
 document.querySelectorAll('.faq-question-btn').forEach(function(button) {
   button.addEventListener('click', function() {
@@ -360,6 +360,29 @@ document.querySelectorAll('.faq-answer').forEach(function(answer) {
 })();
 
 // ============================================================
-// AUTO COPYRIGHT YEAR (Already in HTML, but keeping as backup)
+// FAQ SECTION - TOGGLE ALL FAQS WITH TITLE CLICK (NEW)
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+  var faqToggleBtn = document.getElementById('faqToggleBtn');
+  var faqListWrapper = document.getElementById('faqListWrapper');
+  var faqToggleIcon = document.getElementById('faqToggleIcon');
+
+  if (faqToggleBtn && faqListWrapper) {
+    faqToggleBtn.addEventListener('click', function() {
+      var isHidden = faqListWrapper.style.display === 'none';
+      
+      if (isHidden) {
+        faqListWrapper.style.display = 'block';
+        faqToggleIcon.style.transform = 'rotate(180deg)';
+      } else {
+        faqListWrapper.style.display = 'none';
+        faqToggleIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+});
+
+// ============================================================
+// AUTO COPYRIGHT YEAR (Backup)
 // ============================================================
 // This is also handled in the HTML script block
