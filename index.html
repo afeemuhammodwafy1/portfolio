@@ -565,94 +565,61 @@
       </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section (Updated with details/summary for AI & SEO friendliness) -->
     <section id="faq" class="section" aria-labelledby="faq-title">
       <div class="section-label">FAQ</div>
+      <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
 
-      <!-- FAQ Title with Arrow on the Right -->
-      <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; margin-bottom: 20px;" id="faqToggleBtn">
-        <h2 class="section-title" id="faq-title" style="margin-bottom: 0;">Frequently Asked Questions</h2>
-        <span id="faqToggleIcon" style="display: inline-flex; align-items: center; transition: transform 0.3s ease; color: var(--text-muted); flex-shrink: 0;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-        </span>
-      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question-text">Who is Afee Muhammod Wafy?</summary>
+          <div class="faq-answer"><p>I am a science student with a deep passion for web development and technology. I enjoy learning new things and building projects that solve real problems. My journey is driven by curiosity and a desire to create meaningful digital experiences.</p></div>
+        </details>
 
-      <!-- FAQ List (Hidden by default) -->
-      <div id="faqListWrapper" style="display: none;">
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span class="faq-question-text">Who is Afee Muhammod Wafy?</span>
-              <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer"><p>I am a science student with a deep passion for web development and technology. I enjoy learning new things and building projects that solve real problems. My journey is driven by curiosity and a desire to create meaningful digital experiences.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span class="faq-question-text">What projects have you built?</span>
-              <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer"><p>I have built three main projects so far: WafyURL, a full-stack link management platform with analytics and QR generation; WafyDev, a suite of developer utilities; and AstroWafy, a NASA APOD API-powered space image viewer. Each project helped me learn new skills and improve my development workflow.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span class="faq-question-text">Are you available for freelance or collaboration work?</span>
-              <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer"><p>Yes, I am open to part-time freelance work and project-based collaborations. I enjoy working on meaningful projects where I can contribute my skills and learn from others. Feel free to reach out if you have an idea or a project in mind.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span class="faq-question-text">How can someone contact you?</span>
-              <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer"><p>You can reach me via email at afeemuhammodwafy@yahoo.com or connect with me on LinkedIn. I am also active on GitHub and Twitter, where I share my learning journey and project updates. I try to respond to all messages within 24 hours.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span class="faq-question-text">What technologies do you use to build your projects?</span>
-              <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer"><p>I work with HTML5, CSS3, JavaScript (ES6+), Python, Flask, Git, and GitHub. For design, I use Canva and follow responsive design principles. I also work with REST APIs and deploy projects on GitHub Pages and custom domains. I am currently exploring authentication, databases, and AI integration.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span class="faq-question-text">Are your projects open-source?</span>
-              <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer"><p>Yes, all my projects are publicly available on GitHub. I believe in open-source and the power of sharing knowledge. You can explore the source code, suggest improvements, or fork them for your own learning. Feedback and contributions are always welcome.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span class="faq-question-text">Do you work with APIs?</span>
-              <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer"><p>Yes, I have worked with REST APIs like the NASA APOD API. I am comfortable fetching, parsing, and displaying JSON data in web applications. I enjoy integrating third-party services to add functionality and make projects more interactive.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span class="faq-question-text">What is your current learning focus?</span>
-              <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer"><p>Currently, I am focusing on full-stack web development, AI integration, and cybersecurity fundamentals. I am also improving my Python and Flask skills. My goal is to become a well-rounded developer who can build secure, scalable, and intelligent applications.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span class="faq-question-text">Do you follow any coding standards or best practices?</span>
-              <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer"><p>Yes, I follow clean code principles, use semantic HTML, write modular CSS, and ensure my JavaScript is accessible and performant. I also use Git for version control and follow industry-standard practices to keep my code maintainable and scalable.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span class="faq-question-text">What motivates you to build web projects?</span>
-              <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer"><p>I am motivated by the desire to solve real-world problems through code. Building something from scratch and seeing it work gives me a sense of purpose and creativity. I also enjoy learning new technologies and sharing my knowledge with the developer community.</p></div>
-          </div>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question-text">What projects have you built?</summary>
+          <div class="faq-answer"><p>I have built three main projects so far: WafyURL, a full-stack link management platform with analytics and QR generation; WafyDev, a suite of developer utilities; and AstroWafy, a NASA APOD API-powered space image viewer. Each project helped me learn new skills and improve my development workflow.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question-text">Are you available for freelance or collaboration work?</summary>
+          <div class="faq-answer"><p>Yes, I am open to part-time freelance work and project-based collaborations. I enjoy working on meaningful projects where I can contribute my skills and learn from others. Feel free to reach out if you have an idea or a project in mind.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question-text">How can someone contact you?</summary>
+          <div class="faq-answer"><p>You can reach me via email at afeemuhammodwafy@yahoo.com or connect with me on LinkedIn. I am also active on GitHub and Twitter, where I share my learning journey and project updates. I try to respond to all messages within 24 hours.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question-text">What technologies do you use to build your projects?</summary>
+          <div class="faq-answer"><p>I work with HTML5, CSS3, JavaScript (ES6+), Python, Flask, Git, and GitHub. For design, I use Canva and follow responsive design principles. I also work with REST APIs and deploy projects on GitHub Pages and custom domains. I am currently exploring authentication, databases, and AI integration.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question-text">Are your projects open-source?</summary>
+          <div class="faq-answer"><p>Yes, all my projects are publicly available on GitHub. I believe in open-source and the power of sharing knowledge. You can explore the source code, suggest improvements, or fork them for your own learning. Feedback and contributions are always welcome.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question-text">Do you work with APIs?</summary>
+          <div class="faq-answer"><p>Yes, I have worked with REST APIs like the NASA APOD API. I am comfortable fetching, parsing, and displaying JSON data in web applications. I enjoy integrating third-party services to add functionality and make projects more interactive.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question-text">What is your current learning focus?</summary>
+          <div class="faq-answer"><p>Currently, I am focusing on full-stack web development, AI integration, and cybersecurity fundamentals. I am also improving my Python and Flask skills. My goal is to become a well-rounded developer who can build secure, scalable, and intelligent applications.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question-text">Do you follow any coding standards or best practices?</summary>
+          <div class="faq-answer"><p>Yes, I follow clean code principles, use semantic HTML, write modular CSS, and ensure my JavaScript is accessible and performant. I also use Git for version control and follow industry-standard practices to keep my code maintainable and scalable.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question-text">What motivates you to build web projects?</summary>
+          <div class="faq-answer"><p>I am motivated by the desire to solve real-world problems through code. Building something from scratch and seeing it work gives me a sense of purpose and creativity. I also enjoy learning new technologies and sharing my knowledge with the developer community.</p></div>
+        </details>
       </div>
     </section>
     
@@ -705,6 +672,9 @@
           </a>
           <a href="https://linkedin.com/in/afeemuhammodwafy1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://wa.me/8801644568471" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           </a>
           <a href="https://twitter.com/muhammodwafy" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
