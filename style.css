@@ -347,6 +347,17 @@ textarea:focus-visible {
   justify-content: center;
 }
 
+/* FAQ & Contact Section Gap Fix */
+.section-faq {
+  padding-bottom: 10px !important;
+  min-height: auto !important;
+}
+
+.section-contact {
+  padding-top: 10px !important;
+  min-height: auto !important;
+}
+
 .section-label {
   font-size: 0.65rem;
   text-transform: uppercase;
@@ -1534,6 +1545,31 @@ textarea:focus-visible {
 }
 
 /* ============================================================
+   FAQ TOGGLE BUTTON (Title + Arrow)
+   ============================================================ */
+#faqToggleBtn {
+  cursor: pointer;
+  user-select: none;
+}
+
+#faqToggleBtn:hover {
+  opacity: 0.7;
+}
+
+#faqToggleIcon {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  color: var(--text-muted);
+}
+
+#faqToggleIcon svg {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
@@ -1575,6 +1611,13 @@ textarea:focus-visible {
   .btn-submit { width: 100%; justify-content: center; }
   .filter-bar { gap: 8px; margin-bottom: 24px; }
   .filter-btn { font-size: 0.7rem; padding: 6px 14px; min-height: 36px; }
+  /* FAQ & Contact gap fix for mobile */
+  .section-faq {
+    padding-bottom: 5px !important;
+  }
+  .section-contact {
+    padding-top: 5px !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1592,4 +1635,11 @@ textarea:focus-visible {
   .faq-question-btn { font-size: 0.8rem; padding: 12px 14px; min-height: 44px; }
   .filter-bar { gap: 6px; margin-bottom: 20px; }
   .filter-btn { font-size: 0.65rem; padding: 5px 12px; min-height: 32px; }
+  /* FAQ & Contact gap fix for small mobile */
+  .section-faq {
+    padding-bottom: 2px !important;
+  }
+  .section-contact {
+    padding-top: 2px !important;
+  }
 }
