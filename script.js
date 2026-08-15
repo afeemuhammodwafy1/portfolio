@@ -266,39 +266,22 @@ if (scrollIndicator) {
 }
 
 // ============================================================
-// FAQ TOGGLE (Individual)
+// HTML5 <details> EXCLUSIVE ACCORDION (OPTIONAL)
+// If you want only one FAQ open at a time, keep this. 
+// Otherwise, it can be deleted.
 // ============================================================
-document.querySelectorAll('.faq-question-btn').forEach(function(button) {
-  button.addEventListener('click', function() {
-    var expanded = this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
-    this.setAttribute('aria-expanded', expanded);
-    var answer = this.nextElementSibling;
-    var icon = this.querySelector('.faq-icon svg');
-
-    if (expanded === 'true') {
-      answer.style.maxHeight = answer.scrollHeight + 'px';
-      answer.style.opacity = '1';
-      answer.style.padding = '0 22px 18px';
-      if (icon) {
-        icon.style.transform = 'rotate(180deg)';
-      }
-    } else {
-      answer.style.maxHeight = '0';
-      answer.style.opacity = '0';
-      answer.style.padding = '0 22px';
-      if (icon) {
-        icon.style.transform = 'rotate(0deg)';
-      }
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  const detailsElements = document.querySelectorAll('details.faq-item');
+  
+  detailsElements.forEach((targetDetail) => {
+    targetDetail.addEventListener('click', () => {
+      detailsElements.forEach((detail) => {
+        if (detail !== targetDetail) {
+          detail.removeAttribute('open');
+        }
+      });
+    });
   });
-});
-
-document.querySelectorAll('.faq-answer').forEach(function(answer) {
-  answer.style.maxHeight = '0';
-  answer.style.opacity = '0';
-  answer.style.padding = '0 22px';
-  answer.style.transition = 'max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease';
-  answer.style.overflow = 'hidden';
 });
 
 // ============================================================
@@ -358,31 +341,3 @@ document.querySelectorAll('.faq-answer').forEach(function(answer) {
     }
   });
 })();
-
-// ============================================================
-// FAQ SECTION - TOGGLE ALL FAQS WITH TITLE CLICK (NEW)
-// ============================================================
-document.addEventListener('DOMContentLoaded', function() {
-  var faqToggleBtn = document.getElementById('faqToggleBtn');
-  var faqListWrapper = document.getElementById('faqListWrapper');
-  var faqToggleIcon = document.getElementById('faqToggleIcon');
-
-  if (faqToggleBtn && faqListWrapper) {
-    faqToggleBtn.addEventListener('click', function() {
-      var isHidden = faqListWrapper.style.display === 'none';
-      
-      if (isHidden) {
-        faqListWrapper.style.display = 'block';
-        faqToggleIcon.style.transform = 'rotate(180deg)';
-      } else {
-        faqListWrapper.style.display = 'none';
-        faqToggleIcon.style.transform = 'rotate(0deg)';
-      }
-    });
-  }
-});
-
-// ============================================================
-// AUTO COPYRIGHT YEAR (Backup)
-// ============================================================
-// This is also handled in the HTML script block
