@@ -586,18 +586,21 @@
       </div>
     </section>
 
-    <!-- FAQ Section (Collapsible) -->
+    <!-- FAQ Section -->
     <section id="faq" class="section" aria-labelledby="faq-title">
       <div class="section-label">FAQ</div>
-      <h2 class="section-title" id="faqToggleBtn" style="display: flex; align-items: center; gap: 14px; cursor: pointer; user-select: none;">
-        Frequently Asked Questions
-        <span id="faqToggleIcon" style="display: inline-flex; align-items: center; transition: transform 0.3s ease; color: var(--text-muted);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+      <!-- FAQ Title with Arrow on the Right -->
+      <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; margin-bottom: 20px;" id="faqToggleBtn">
+        <h2 class="section-title" id="faq-title" style="margin-bottom: 0;">Frequently Asked Questions</h2>
+        <span id="faqToggleIcon" style="display: inline-flex; align-items: center; transition: transform 0.3s ease; color: var(--text-muted); flex-shrink: 0;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="6 9 12 15 18 9"/>
           </svg>
         </span>
-      </h2>
+      </div>
 
+      <!-- FAQ List (Hidden by default) -->
       <div id="faqListWrapper" style="display: none;">
         <div class="faq-list">
           <div class="faq-item">
@@ -673,7 +676,7 @@
         </div>
       </div>
     </section>
-
+    
     <!-- Contact Section -->
     <section id="contact" class="section" aria-labelledby="contact-title">
       <div class="section-label">Contact</div>
