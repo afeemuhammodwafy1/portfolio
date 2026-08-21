@@ -1256,7 +1256,7 @@ details.faq-item summary {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-primary);
-  list-style: none;
+  list-style: none; /* Hide default triangle arrow */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1446,7 +1446,6 @@ details[open].faq-item summary::after {
   color: var(--text-secondary);
   margin-bottom: 28px;
   font-size: 1rem;
-  min-height: 1.8em;
 }
 
 .footer-social {
@@ -1544,23 +1543,30 @@ details[open].faq-item summary::after {
 }
 
 /* ============================================================
-   SCROLL ANIMATION & CONFETTI (NEW)
+   FAQ TOGGLE BUTTON (Title + Arrow) 
+   [Kept for compatibility, though you can delete this section 
+   if you removed the old toggle button from HTML]
    ============================================================ */
-.section:not(.hero) {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+#faqToggleBtn {
+  cursor: pointer;
+  user-select: none;
 }
 
-.section-visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+#faqToggleBtn:hover {
+  opacity: 0.7;
 }
 
-@keyframes confettiFall {
-  0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
-  100% { transform: translateY(100vh) rotate(720deg) scale(0); opacity: 0; }
+#faqToggleIcon {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  color: var(--text-muted);
+}
+
+#faqToggleIcon svg {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
 }
 
 /* ============================================================
@@ -1596,6 +1602,7 @@ details[open].faq-item summary::after {
   .exp-content { padding: 18px; }
   .exp-title { font-size: 0.95rem; }
   
+  /* Details FAQ Mobile Tweaks */
   details.faq-item { padding: 12px 14px; }
   details.faq-item summary { font-size: 0.85rem; min-height: 24px; }
   .faq-answer p { font-size: 0.8rem; }
@@ -1625,6 +1632,7 @@ details[open].faq-item summary::after {
   .edu-sub-heading { font-size: 0.9rem; }
   .exp-content { padding: 14px; }
   
+  /* Details FAQ Mobile Mini Tweaks */
   details.faq-item { padding: 10px 12px; }
   details.faq-item summary { font-size: 0.8rem; }
   
