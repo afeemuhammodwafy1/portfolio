@@ -3,68 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 — Page Not Found · Afee Muhammod Wafy</title>
-  <meta name="description" content="404 — The page you are looking for does not exist. Return to the portfolio of Afee Muhammod Wafy." />
-  <link rel="canonical" href="https://www.amwafy.xyz/404.html" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
-  <link rel="apple-touch-icon" href="/icon.png" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Afee Muhammod Wafy" />
-  <meta property="og:title" content="404 — Page Not Found" />
-  <meta property="og:description" content="The page you are looking for doesn't exist. Return to the portfolio of Afee Muhammod Wafy." />
-  <meta property="og:url" content="https://www.amwafy.xyz/404.html" />
-  <meta property="og:image" content="https://www.amwafy.xyz/icon.png" />
-  <meta property="og:image:width" content="512" />
-  <meta property="og:image:height" content="512" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@muhammodwafy" />
-  <meta name="twitter:title" content="404 — Page Not Found" />
-  <meta name="twitter:description" content="The page you are looking for doesn't exist. Return to the portfolio of Afee Muhammod Wafy." />
-  <meta name="twitter:image" content="https://www.amwafy.xyz/icon.png" />
-
+  <title>Page Not Found | Afee Muhammod Wafy</title>
+  <meta name="description" content="Page not found. Return to the portfolio of Afee Muhammod Wafy." />
+  <meta name="robots" content="noindex, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
+  <link rel="apple-touch-icon" href="/icon.png" />
   <style>
-    /* ============================================================
-       RESET + ROOT VARIABLES
-       ============================================================ */
+    /* Same CSS as before - no changes needed */
+    :root {
+      --bg-primary: #0d0d0d;
+      --bg-secondary: #141414;
+      --bg-card: #1a1a1a;
+      --bg-card-hover: #222222;
+      --text-primary: #f0f0f0;
+      --text-secondary: #a8a8a8;
+      --text-muted: #6a6a6a;
+      --border: rgba(255, 255, 255, 0.04);
+      --border-hover: rgba(255, 255, 255, 0.08);
+      --font: 'Space Grotesk', sans-serif;
+      --radius: 16px;
+      --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
-    :root {
-      --bg-primary: #0a0a0a;
-      --bg-secondary: #121212;
-      --bg-card: #181818;
-      --bg-card-hover: #202020;
-      --text-primary: #f5f5f5;
-      --text-secondary: #b8b8b8;
-      --text-muted: #7a7a7a;
-      --text-light: #d0d0d0;
-      --border: rgba(255, 255, 255, 0.05);
-      --border-hover: rgba(255, 255, 255, 0.1);
-      --radius: 12px;
-      --radius-lg: 20px;
-      --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      --font: 'Space Grotesk', sans-serif;
-      --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.7);
-      --glow-subtle: 0 0 40px rgba(255, 255, 255, 0.02);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       background: var(--bg-primary);
       color: var(--text-primary);
@@ -75,547 +42,302 @@
       align-items: center;
       justify-content: center;
       padding: 24px;
-      background-image: 
-        radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.01) 0%, transparent 50%),
-        radial-gradient(circle at 85% 75%, rgba(255, 255, 255, 0.008) 0%, transparent 50%);
     }
-
-    ::selection {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-    }
-
-    ::-webkit-scrollbar {
-      width: 4px;
-    }
-    ::-webkit-scrollbar-track {
-      background: var(--bg-primary);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--text-muted);
-      border-radius: 10px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--text-primary);
-      outline-offset: 2px;
-      border-radius: 4px;
-    }
-
-    /* ============================================================
-       404 CONTAINER — Premium Card
-       ============================================================ */
-    .error-container {
-      max-width: 680px;
+    .error-wrapper {
       width: 100%;
+      max-width: 920px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
       background: var(--bg-secondary);
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 56px 48px 48px;
-      text-align: center;
-      box-shadow: var(--shadow-card), var(--glow-subtle);
-      transition: var(--transition);
+      border-radius: var(--radius);
+      padding: 50px 48px 40px;
       position: relative;
       overflow: hidden;
     }
-
-    .error-container::before {
+    .error-wrapper::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+      top: -40%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.015), transparent 70%);
+      pointer-events: none;
     }
-
-    .error-container:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-card), 0 0 60px rgba(255, 255, 255, 0.02);
+    .error-content {
+      position: relative;
+      z-index: 1;
     }
-
-    /* ============================================================
-       BRAND / HEADER
-       ============================================================ */
-    .error-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      padding: 6px 16px 6px 12px;
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      background: rgba(255, 255, 255, 0.01);
-      transition: var(--transition);
-    }
-
-    .error-brand:hover {
-      border-color: var(--border-hover);
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .brand-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--text-primary);
-      opacity: 0.6;
-      display: inline-block;
-      animation: pulse-dot 2.5s ease-in-out infinite;
-    }
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 0.6; transform: scale(1); }
-      50% { opacity: 0.3; transform: scale(0.85); }
-    }
-
-    .brand-text {
-      font-size: 0.7rem;
+    .brand {
+      font-size: 1.4rem;
       font-weight: 700;
-      letter-spacing: 2.5px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
-
-    /* ============================================================
-       ERROR CODE — Dynamic Display
-       ============================================================ */
-    .error-display {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-
-    .error-code {
-      font-size: 6rem;
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
       color: var(--text-primary);
-      background: linear-gradient(135deg, var(--text-primary) 40%, var(--text-muted) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .error-emoji {
+      text-decoration: none;
+      letter-spacing: 2px;
       display: inline-block;
-      font-size: 3.8rem;
-      line-height: 1;
-      animation: float-emoji 4s ease-in-out infinite;
-      -webkit-text-fill-color: initial;
+      margin-bottom: 30px;
     }
-
-    @keyframes float-emoji {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-8px) scale(1.05); }
+    .brand .accent {
+      color: var(--text-muted);
     }
-
-    .error-subcode {
-      font-size: 0.75rem;
+    .error-code {
+      font-size: 0.7rem;
+      font-weight: 500;
       color: var(--text-muted);
       letter-spacing: 4px;
       text-transform: uppercase;
-      margin-top: -4px;
-      margin-bottom: 16px;
-      font-weight: 500;
-    }
-
-    /* ============================================================
-       TITLE + DESCRIPTION
-       ============================================================ */
-    .error-title {
-      font-size: 1.8rem;
-      font-weight: 700;
       margin-bottom: 10px;
-      color: var(--text-primary);
-      letter-spacing: -0.01em;
-    }
-
-    .error-desc {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      max-width: 460px;
-      margin: 0 auto 28px;
-      line-height: 1.8;
-    }
-
-    .error-desc strong {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-
-    /* ============================================================
-       SUGGESTIONS — Quick Links Grid
-       ============================================================ */
-    .error-suggestions {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 32px;
-    }
-
-    .suggestion-link {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 4px;
-      padding: 14px 8px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      color: var(--text-secondary);
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-      transition: var(--transition);
-      min-height: 64px;
+      gap: 6px;
     }
-
-    .suggestion-link svg {
-      width: 20px;
-      height: 20px;
+    .error-code svg {
+      width: 14px;
+      height: 14px;
       stroke: var(--text-muted);
-      flex-shrink: 0;
-      transition: var(--transition);
     }
-
-    .suggestion-link:hover {
-      border-color: var(--border-hover);
-      background: var(--bg-card-hover);
+    .error-title {
+      font-size: 3.2rem;
+      font-weight: 700;
       color: var(--text-primary);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      line-height: 1.05;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
     }
-
-    .suggestion-link:hover svg {
-      stroke: var(--text-primary);
-    }
-
-    /* ============================================================
-       ACTION BUTTONS
-       ============================================================ */
-    .error-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      justify-content: center;
-      margin-bottom: 32px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 13px 34px;
-      background: var(--text-primary);
-      color: var(--bg-primary);
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-      min-height: 48px;
-    }
-
-    .btn-primary svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--bg-primary);
-      flex-shrink: 0;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      opacity: 0.85;
-      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.08);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 30px;
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: var(--transition);
-      min-height: 48px;
-      background: transparent;
-      cursor: pointer;
-    }
-
-    .btn-secondary svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--text-secondary);
-      flex-shrink: 0;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--text-muted);
-      color: var(--text-primary);
-      background: rgba(255, 255, 255, 0.02);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary:hover svg {
-      stroke: var(--text-primary);
-    }
-
-    /* ============================================================
-       FOOTER QUOTE
-       ============================================================ */
-    .error-footer {
-      border-top: 1px solid var(--border);
-      padding-top: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .error-quote {
+    .error-title .highlight {
       color: var(--text-muted);
-      font-size: 0.8rem;
-      letter-spacing: 0.3px;
-      font-weight: 400;
-    }
-
-    .error-quote span {
-      color: var(--text-secondary);
-      font-weight: 500;
-    }
-
-    .error-quote-icon {
-      color: var(--text-muted);
-      opacity: 0.3;
-      font-size: 0.9rem;
-    }
-
-    .error-meta {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 0.65rem;
-      color: var(--text-muted);
-      letter-spacing: 0.5px;
-    }
-
-    .error-meta span {
       opacity: 0.4;
     }
-
-    .error-meta a {
-      color: var(--text-muted);
-      transition: var(--transition);
-    }
-
-    .error-meta a:hover {
+    .error-desc {
       color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 28px;
+      max-width: 400px;
     }
-
-    /* ============================================================
-       RESPONSIVE
-       ============================================================ */
-    @media (max-width: 700px) {
-      .error-container {
-        padding: 40px 24px 32px;
-        border-radius: 16px;
-      }
-      .error-code {
-        font-size: 4.2rem;
-      }
-      .error-emoji {
-        font-size: 2.8rem;
-      }
-      .error-title {
-        font-size: 1.4rem;
-      }
-      .error-desc {
-        font-size: 0.88rem;
-        padding: 0 4px;
-      }
-      .error-suggestions {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-      }
-      .suggestion-link {
-        padding: 10px 4px;
-        font-size: 0.6rem;
-        min-height: 56px;
-      }
-      .suggestion-link svg {
-        width: 16px;
-        height: 16px;
-      }
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 34px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: var(--font);
+      border-radius: 50px;
+      text-decoration: none;
+      transition: var(--transition);
+      background: var(--text-primary);
+      color: var(--bg-primary);
+      border: none;
+      cursor: pointer;
     }
-
-    @media (max-width: 500px) {
-      .error-container {
-        padding: 32px 16px 24px;
-        border-radius: 12px;
-      }
-      .error-code {
-        font-size: 3.2rem;
-      }
-      .error-emoji {
-        font-size: 2.2rem;
-      }
-      .error-subcode {
-        font-size: 0.6rem;
-        letter-spacing: 3px;
-      }
-      .error-title {
-        font-size: 1.2rem;
-      }
-      .error-desc {
-        font-size: 0.8rem;
-        margin-bottom: 20px;
-      }
-      .error-suggestions {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
-        margin-bottom: 24px;
-      }
-      .suggestion-link {
-        padding: 8px 4px;
-        font-size: 0.55rem;
-        min-height: 48px;
-        border-radius: 8px;
-      }
-      .suggestion-link svg {
-        width: 14px;
-        height: 14px;
-      }
-      .error-actions {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-        margin-bottom: 24px;
-      }
-      .btn-primary,
-      .btn-secondary {
-        width: 100%;
-        justify-content: center;
-        padding: 12px 20px;
-        font-size: 0.8rem;
-        min-height: 44px;
-      }
-      .error-footer {
-        padding-top: 18px;
-      }
-      .error-quote {
-        font-size: 0.7rem;
-      }
-      .error-meta {
-        font-size: 0.55rem;
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+    .btn-home:hover {
+      transform: translateY(-2px) scale(1.02);
+      opacity: 0.9;
     }
-
-    @media (max-width: 380px) {
-      .error-suggestions {
+    .btn-home svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+      stroke: var(--bg-primary);
+    }
+    .btn-home:hover svg {
+      transform: translateX(-4px);
+    }
+    .error-footer {
+      margin-top: 40px;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+    .error-footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      border-bottom: 1px solid transparent;
+    }
+    .error-footer a:hover {
+      color: var(--text-primary);
+      border-bottom-color: var(--text-muted);
+    }
+    .error-visual {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .big-404 {
+      font-size: 9rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--text-primary);
+      opacity: 0.025;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      user-select: none;
+      pointer-events: none;
+      letter-spacing: -0.04em;
+    }
+    .floating-icon {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      background: var(--bg-card);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      animation: float 6s ease-in-out infinite;
+    }
+    .floating-icon svg {
+      width: 60px;
+      height: 60px;
+      stroke: var(--text-secondary);
+      opacity: 0.5;
+      animation: iconPulse 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-14px) rotate(2deg); }
+    }
+    @keyframes iconPulse {
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.06); opacity: 0.7; }
+    }
+    .orbit-ring {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      animation: spin 20s linear infinite;
+      pointer-events: none;
+    }
+    .orbit-ring:nth-child(2) {
+      width: 260px;
+      height: 260px;
+      animation-duration: 30s;
+      animation-direction: reverse;
+      opacity: 0.5;
+    }
+    .orbit-dot {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      opacity: 0.3;
+      top: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .orbit-dot-2 {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      opacity: 0.2;
+      bottom: -2px;
+      left: 30%;
+    }
+    .orbit-dot-3 {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      opacity: 0.15;
+      top: 30%;
+      right: -4px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @media (max-width: 820px) {
+      .error-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+        padding: 36px 24px 30px;
+      }
+      .error-content { order: 2; }
+      .error-visual { order: 1; }
+      .error-desc { max-width: 100%; margin: 0 auto 28px; }
+      .btn-home { justify-content: center; }
+      .error-title { font-size: 2.6rem; }
+      .big-404 { font-size: 6rem; }
+      .floating-icon { width: 110px; height: 110px; }
+      .floating-icon svg { width: 48px; height: 48px; }
+      .orbit-ring { width: 160px; height: 160px; }
+      .orbit-ring:nth-child(2) { width: 200px; height: 200px; }
+    }
+    @media (max-width: 480px) {
+      .error-wrapper { padding: 28px 16px 24px; border-radius: 12px; }
+      .error-title { font-size: 2rem; }
+      .error-code { font-size: 0.6rem; letter-spacing: 3px; }
+      .error-desc { font-size: 0.9rem; }
+      .btn-home { width: 100%; justify-content: center; padding: 12px 24px; font-size: 0.8rem; }
+      .floating-icon { width: 90px; height: 90px; }
+      .floating-icon svg { width: 40px; height: 40px; }
+      .big-404 { font-size: 4.5rem; }
+      .orbit-ring { width: 130px; height: 130px; }
+      .orbit-ring:nth-child(2) { width: 160px; height: 160px; }
+      .brand { font-size: 1.1rem; margin-bottom: 20px; }
+      .error-footer { margin-top: 24px; font-size: 0.6rem; }
+    }
+    @media (max-height: 600px) and (orientation: landscape) {
+      .error-wrapper {
         grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        padding: 24px 30px;
+        text-align: left;
       }
-      .error-code {
-        font-size: 2.6rem;
-      }
-      .error-emoji {
-        font-size: 1.8rem;
-      }
-      .error-container {
-        padding: 24px 12px 20px;
-      }
+      .error-content { order: 1; }
+      .error-visual { order: 2; }
+      .error-title { font-size: 2rem; }
+      .floating-icon { width: 80px; height: 80px; }
+      .floating-icon svg { width: 36px; height: 36px; }
+      .big-404 { font-size: 4rem; }
+      .orbit-ring { width: 120px; height: 120px; }
+      .orbit-ring:nth-child(2) { width: 150px; height: 150px; }
+      .error-desc { font-size: 0.85rem; margin-bottom: 18px; }
+      .btn-home { padding: 10px 24px; font-size: 0.75rem; }
+      .error-footer { margin-top: 18px; }
     }
   </style>
 </head>
 <body>
-
-  <div class="error-container" role="main" aria-labelledby="error-title">
-
-    <!-- Brand Badge -->
-    <div class="error-brand" aria-hidden="true">
-      <span class="brand-dot"></span>
-      <span class="brand-text">WAFY</span>
-    </div>
-
-    <!-- 404 Display -->
-    <div class="error-display">
-      <span class="error-code">4</span>
-      <span class="error-emoji" role="img" aria-label="Rocket emoji indicating lost in space">🚀</span>
-      <span class="error-code">4</span>
-    </div>
-    <div class="error-subcode">— page not found —</div>
-
-    <!-- Title & Description -->
-    <h1 id="error-title" class="error-title">Lost in the void?</h1>
-    <p class="error-desc">
-      The page you're looking for doesn't exist, may have been moved, or is 
-      <strong>still being built</strong> — just like my latest project.
-      Let's get you back on track.
-    </p>
-
-    <!-- Quick Suggestions -->
-    <div class="error-suggestions">
-      <a href="/" class="suggestion-link" aria-label="Go to Homepage">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1m-2 0h2"/></svg>
-        Home
-      </a>
-      <a href="/#projects" class="suggestion-link" aria-label="View Projects">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
-        Projects
-      </a>
-      <a href="/#contact" class="suggestion-link" aria-label="Contact">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Contact
-      </a>
-    </div>
-
-    <!-- Action Buttons -->
-    <div class="error-actions">
-      <a href="/" class="btn-primary" aria-label="Return to homepage">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1m-2 0h2"/></svg>
-        Go Home
-      </a>
-      <a href="mailto:afeemuhammodwafy@yahoo.com" class="btn-secondary" aria-label="Send an email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Report Issue
-      </a>
-    </div>
-
-    <!-- Footer -->
-    <div class="error-footer">
-      <div class="error-quote">
-        <span class="error-quote-icon">✦</span>
-        <span>“The best way to predict the future is to build it.”</span>
-        <span class="error-quote-icon">✦</span>
+  <div class="error-wrapper">
+    <div class="error-content">
+      <a href="/" class="brand">WAFY<span class="accent">.</span></a>
+      <div class="error-code">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="16 16 12 12 8 8"/></svg>
+        404 — Lost
       </div>
-      <div class="error-meta">
-        <span>—</span>
-        <a href="/">amwafy.xyz</a>
-        <span>·</span>
-        <span>404</span>
-        <span>·</span>
-        <a href="https://github.com/afeemuhammodwafy1" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <h1 class="error-title">Page Not<br /><span class="highlight">Found</span></h1>
+      <p class="error-desc">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+      <a href="/" class="btn-home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Home
+      </a>
+      <div class="error-footer">&copy; 2026 Afee Muhammod Wafy. All rights reserved.</div>
+    </div>
+    <div class="error-visual">
+      <div class="big-404">404</div>
+      <div class="orbit-ring"><span class="orbit-dot"></span><span class="orbit-dot-2"></span><span class="orbit-dot-3"></span></div>
+      <div class="orbit-ring"><span class="orbit-dot" style="top:auto;bottom:-3px;left:40%;"></span></div>
+      <div class="floating-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
       </div>
     </div>
-
   </div>
-
 </body>
 </html>
