@@ -93,7 +93,7 @@ if (menuBtn && mobileNav) {
 // ============================================================
 // TYPING EFFECT
 // ============================================================
-var roles = ["Science Student", "AI & Tech Explorer"];
+var roles = ["Science Student", "Web Developer", "AI & Tech Explorer"];
 var roleIndex = 0;
 var charIndex = 0;
 var isDeleting = false;
