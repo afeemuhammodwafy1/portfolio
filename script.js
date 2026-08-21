@@ -2,19 +2,19 @@
 // PROJECT FILTER - Smooth Animation with Event Listeners
 // ============================================================
 document.addEventListener('DOMContentLoaded', function() {
-  var filterButtons = document.querySelectorAll('.filter-btn');
+  const filterButtons = document.querySelectorAll('.filter-btn');
   
   filterButtons.forEach(function(btn) {
     btn.addEventListener('click', function() {
-      var filterType = this.getAttribute('data-filter');
-      var grid = this.closest('.section').querySelector('.projects-grid');
+      const filterType = this.getAttribute('data-filter');
+      const grid = this.closest('.section').querySelector('.projects-grid');
       
       if (!grid) return;
       
-      var cards = grid.querySelectorAll('.project-card');
+      const cards = grid.querySelectorAll('.project-card');
       
       // Update active button
-      var siblings = this.closest('.filter-bar').querySelectorAll('.filter-btn');
+      const siblings = this.closest('.filter-bar').querySelectorAll('.filter-btn');
       siblings.forEach(function(sib) {
         sib.classList.remove('active');
       });
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Filter cards with smooth animation
       cards.forEach(function(card, index) {
-        var tags = card.getAttribute('data-tags') || '';
-        var show = false;
+        const tags = card.getAttribute('data-tags') || '';
+        let show = false;
         
         if (filterType === 'all') {
           show = true;
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
           card.classList.remove('filtering-out');
           card.classList.add('filtering-in');
           
-          var delay = index * 80;
+          const delay = index * 80;
           setTimeout(function() {
             card.classList.add('show');
           }, delay);
@@ -68,12 +68,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================================
 // MOBILE MENU
 // ============================================================
-var menuBtn = document.getElementById('menuBtn');
-var mobileNav = document.getElementById('mobileNav');
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
 
 if (menuBtn && mobileNav) {
   menuBtn.addEventListener('click', function() {
-    var expanded = this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+    const expanded = this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
     this.setAttribute('aria-expanded', expanded);
     this.classList.toggle('active');
     mobileNav.classList.toggle('active');
@@ -93,15 +93,15 @@ if (menuBtn && mobileNav) {
 // ============================================================
 // TYPING EFFECT
 // ============================================================
-var roles = ["Science Student", "Web Developer", "AI & Tech Explorer"];
-var roleIndex = 0;
-var charIndex = 0;
-var isDeleting = false;
-var roleEl = document.getElementById('roleText');
+const roles = ["Science Student", "Web Developer", "AI & Tech Explorer"];
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const roleEl = document.getElementById('roleText');
 
 if (roleEl) {
   function typeRole() {
-    var current = roles[roleIndex];
+    const current = roles[roleIndex];
     if (isDeleting) {
       roleEl.textContent = current.slice(0, charIndex - 1);
       charIndex--;
@@ -127,16 +127,16 @@ if (roleEl) {
 // ============================================================
 // ACTIVE NAV - Handles both index.html and subpages
 // ============================================================
-var sections = document.querySelectorAll('.section');
-var navLinks = document.querySelectorAll('.nav-link');
-var mobileLinks = document.querySelectorAll('.mobile-nav-link');
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('.nav-link');
+const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
 function setActive(id) {
-  var isProjectsPage = window.location.pathname.includes('/projects/');
-  var isCertPage = window.location.pathname.includes('/certifications/');
+  const isProjectsPage = window.location.pathname.includes('/projects/');
+  const isCertPage = window.location.pathname.includes('/certifications/');
   
   navLinks.forEach(function(link) {
-    var linkSection = link.getAttribute('data-section');
+    const linkSection = link.getAttribute('data-section');
     
     // On projects page, keep Projects active
     if (isProjectsPage && linkSection === 'projects') {
@@ -161,7 +161,7 @@ function setActive(id) {
   });
   
   mobileLinks.forEach(function(link) {
-    var linkSection = link.getAttribute('data-section');
+    const linkSection = link.getAttribute('data-section');
     
     if (isProjectsPage && linkSection === 'projects') {
       link.classList.add('active');
@@ -185,9 +185,9 @@ function setActive(id) {
 }
 
 window.addEventListener('scroll', function() {
-  var current = '';
+  let current = '';
   sections.forEach(function(section) {
-    var top = section.offsetTop - 120;
+    const top = section.offsetTop - 120;
     if (window.scrollY >= top) {
       current = section.id;
     }
@@ -200,7 +200,7 @@ window.addEventListener('scroll', function() {
 // ============================================================
 // BACK TO TOP
 // ============================================================
-var backTop = document.getElementById('backTop');
+const backTop = document.getElementById('backTop');
 
 if (backTop) {
   window.addEventListener('scroll', function() {
@@ -217,14 +217,14 @@ if (backTop) {
 // ============================================================
 function smoothScroll(target, duration) {
   duration = duration || 400;
-  var start = window.scrollY;
-  var end = target.getBoundingClientRect().top + start;
-  var startTime = performance.now();
+  const start = window.scrollY;
+  const end = target.getBoundingClientRect().top + start;
+  const startTime = performance.now();
 
   function animateScroll(currentTime) {
-    var elapsed = currentTime - startTime;
-    var progress = Math.min(elapsed / duration, 1);
-    var ease = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
     window.scrollTo(0, start + (end - start) * ease);
     if (progress < 1) {
       requestAnimationFrame(animateScroll);
@@ -235,10 +235,10 @@ function smoothScroll(target, duration) {
 
 document.querySelectorAll('.nav-link, .mobile-nav-link, .btn-primary, .btn-secondary').forEach(function(link) {
   link.addEventListener('click', function(e) {
-    var href = this.getAttribute('href');
+    const href = this.getAttribute('href');
     if (href && href.startsWith('#') && !this.hasAttribute('download')) {
       e.preventDefault();
-      var target = document.querySelector(href);
+      const target = document.querySelector(href);
       if (target) {
         requestAnimationFrame(function() {
           smoothScroll(target, 400);
@@ -251,7 +251,7 @@ document.querySelectorAll('.nav-link, .mobile-nav-link, .btn-primary, .btn-secon
 // ============================================================
 // SCROLL INDICATOR AUTO-HIDE
 // ============================================================
-var scrollIndicator = document.getElementById('scrollIndicator');
+const scrollIndicator = document.getElementById('scrollIndicator');
 
 if (scrollIndicator) {
   setTimeout(function() {
@@ -267,8 +267,6 @@ if (scrollIndicator) {
 
 // ============================================================
 // HTML5 <details> EXCLUSIVE ACCORDION (OPTIONAL)
-// If you want only one FAQ open at a time, keep this. 
-// Otherwise, it can be deleted.
 // ============================================================
 document.addEventListener('DOMContentLoaded', function() {
   const detailsElements = document.querySelectorAll('details.faq-item');
@@ -288,11 +286,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // CONTACT FORM
 // ============================================================
 (function() {
-  var contactForm = document.getElementById('contactForm');
-  var submitBtn = document.getElementById('submitBtn');
-  var btnText = document.getElementById('btnText');
-  var btnSpinner = document.getElementById('btnSpinner');
-  var formStatus = document.getElementById('formStatus');
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('btnText');
+  const btnSpinner = document.getElementById('btnSpinner');
+  const formStatus = document.getElementById('formStatus');
 
   if (!contactForm) return;
 
@@ -300,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
 
     // Honeypot check
-    var honeypot = contactForm.querySelector('#company');
+    const honeypot = contactForm.querySelector('#company');
     if (honeypot && honeypot.value.trim() !== '') {
       return;
     }
@@ -310,10 +308,10 @@ document.addEventListener('DOMContentLoaded', function() {
     btnSpinner.style.display = 'inline';
     formStatus.style.display = 'none';
 
-    var formData = new FormData(this);
+    const formData = new FormData(this);
 
     try {
-      var response = await fetch(this.action, {
+      const response = await fetch(this.action, {
         method: 'POST',
         body: formData,
         headers: { 'Accept': 'application/json' }
