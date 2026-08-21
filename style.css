@@ -387,35 +387,12 @@ textarea:focus-visible {
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.015) 0%, transparent 60%),
-              radial-gradient(circle at 70% 80%, rgba(255,255,255,0.008) 0%, transparent 50%);
-  animation: heroGlow 20s ease-in-out infinite alternate;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes heroGlow {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-5%, 5%) scale(1.1); }
 }
 
 .hero-content-center {
   max-width: 780px;
   width: 100%;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
 }
 
 .hero-tag {
@@ -825,7 +802,7 @@ textarea:focus-visible {
   border-color: var(--border-hover);
   transform: translateY(-5px);
   background: var(--bg-card-hover);
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.02), 0 12px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .project-card.filtering-out {
@@ -1567,7 +1544,7 @@ details[open].faq-item summary::after {
 }
 
 /* ============================================================
-   PREMIUM UI/UX: SCROLL ANIMATION BASE
+   SCROLL ANIMATION & CONFETTI (NEW)
    ============================================================ */
 .section:not(.hero) {
   opacity: 0;
@@ -1581,9 +1558,6 @@ details[open].faq-item summary::after {
   transform: translateY(0) !important;
 }
 
-/* ============================================================
-   PREMIUM UI/UX: CONFETTI ANIMATION
-   ============================================================ */
 @keyframes confettiFall {
   0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
   100% { transform: translateY(100vh) rotate(720deg) scale(0); opacity: 0; }
