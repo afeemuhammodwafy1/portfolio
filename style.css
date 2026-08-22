@@ -382,29 +382,40 @@ textarea:focus-visible {
   margin: 0 auto;
 }
 
-/* ===== প্রোফাইল ছবি ===== */
-.hero-profile-image {
-  margin-bottom: 24px;
+.hero-split {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 60px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  gap: 60px;
+  text-align: left;
 }
 
-.hero-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
+.hero-content-left {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-image-right {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: -100px -60px -60px 0;
+  overflow: hidden;
+}
+
+.hero-photo-full {
+  width: 100%;
+  height: 100vh;
   object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05),
-              0 20px 60px rgba(0, 0, 0, 0.5);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s ease;
-}
-
-.hero-photo:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1),
-              0 30px 80px rgba(0, 0, 0, 0.6);
+  display: block;
+  margin: 0;
 }
 
 .hero-tag {
@@ -486,7 +497,7 @@ textarea:focus-visible {
   color: var(--text-secondary);
   font-size: 1rem;
   max-width: 580px;
-  margin: 0 auto 30px;
+  margin: 0 0 30px 0;
   line-height: 1.8;
 }
 
@@ -494,7 +505,6 @@ textarea:focus-visible {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  justify-content: center;
   margin-bottom: 36px;
 }
 
@@ -561,7 +571,6 @@ textarea:focus-visible {
 .hero-social {
   display: flex;
   gap: 12px;
-  justify-content: center;
 }
 
 .hero-social a {
@@ -1415,6 +1424,34 @@ details[open].faq-item summary::after {
   .cert-grid-home { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-split {
+    flex-direction: column;
+    padding: 100px 40px 60px;
+    text-align: center;
+    gap: 40px;
+  }
+  .hero-content-left {
+    max-width: 100%;
+  }
+  .hero-desc {
+    margin: 0 auto 30px;
+  }
+  .hero-social {
+    justify-content: center;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-image-right {
+    margin: 0 -40px 0;
+    height: 50vh;
+    width: 100vw;
+    justify-content: center;
+  }
+  .hero-photo-full {
+    height: 50vh;
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1427,7 +1464,17 @@ details[open].faq-item summary::after {
   .hero { padding-top: 70px; min-height: auto; }
   .hero-name { font-size: 2.4rem; }
   .hero-role { font-size: 1rem; }
-  .hero-photo { width: 130px; height: 130px; }
+  .hero-split {
+    padding: 70px 24px 50px;
+    gap: 30px;
+  }
+  .hero-image-right {
+    margin: 0 -24px 0;
+    height: 40vh;
+  }
+  .hero-photo-full {
+    height: 40vh;
+  }
   .projects-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
@@ -1450,7 +1497,6 @@ details[open].faq-item summary::after {
 
 @media (max-width: 480px) {
   .hero-name { font-size: 1.8rem; }
-  .hero-photo { width: 110px; height: 110px; }
   .hero-actions { flex-direction: column; align-items: center; }
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
   .section-title { font-size: 1.4rem; }
@@ -1463,4 +1509,14 @@ details[open].faq-item summary::after {
   .exp-content { padding: 14px; }
   details.faq-item { padding: 10px 12px; }
   details.faq-item summary { font-size: 0.8rem; }
+  .hero-split {
+    padding: 60px 16px 40px;
+  }
+  .hero-image-right {
+    margin: 0 -16px 0;
+    height: 35vh;
+  }
+  .hero-photo-full {
+    height: 35vh;
+  }
 }

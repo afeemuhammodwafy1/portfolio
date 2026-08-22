@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Afee Muhammod Wafy — Science Student & Web Developer</title>
+  <title>Afee Muhammod Wafy</title>
   <meta name="description" content="Afee Muhammod Wafy — Web Developer from Bangladesh. Building full-stack apps, API integrations, and developer tools." />
   <link rel="canonical" href="https://www.amwafy.xyz/" />
   <link rel="icon" type="image/webp" sizes="32x32" href="/icon.webp" />
@@ -19,7 +19,7 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Afee Muhammod Wafy" />
-  <meta property="og:title" content="Afee Muhammod Wafy — Science Student & Web Developer" />
+  <meta property="og:title" content="Afee Muhammod Wafy" />
   <meta property="og:description" content="Afee Muhammod Wafy — Web Developer from Bangladesh. Building full-stack apps, API integrations, and developer tools." />
   <meta property="og:url" content="https://www.amwafy.xyz/" />
   <meta property="og:image" content="https://www.amwafy.xyz/icon.webp" />
@@ -29,13 +29,14 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@muhammodwafy" />
-  <meta name="twitter:title" content="Afee Muhammod Wafy — Science Student & Web Developer" />
+  <meta name="twitter:title" content="Afee Muhammod Wafy" />
   <meta name="twitter:description" content="Afee Muhammod Wafy — Web Developer from Bangladesh. Building full-stack apps, API integrations, and developer tools." />
   <meta name="twitter:image" content="https://www.amwafy.xyz/icon.webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" />
+  <link rel="preload" href="/style.css" as="style" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="/style.css" />
@@ -249,17 +250,8 @@
 
   <main class="main-content" id="main-content" role="main">
 
-    <!-- ============================================================
-         HERO SECTION (ছবি যোগ করা হয়েছে)
-         ============================================================ -->
-    <section id="home" class="section hero" aria-labelledby="hero-title">
-      <div class="hero-content-center">
-        
-        <!-- ====== প্রোফাইল ছবি ====== -->
-        <div class="hero-profile-image">
-          <img src="wafy.webp" alt="Afee Muhammod Wafy - প্রোফাইল ছবি" class="hero-photo" />
-        </div>
-
+    <section id="home" class="section hero hero-split" aria-labelledby="hero-title">
+      <div class="hero-content-left">
         <div class="hero-tag">
           <span class="pulse-dot" aria-hidden="true"></span>Available
         </div>
@@ -299,15 +291,11 @@
           </a>
         </div>
       </div>
-      <div class="scroll-indicator" id="scrollIndicator" aria-hidden="true">
-        <span>Scroll</span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="hero-image-right">
+        <img src="wafy.webp" alt="Afee Muhammod Wafy" class="hero-photo-full" />
       </div>
     </section>
 
-    <!-- ============================================================
-         ABOUT SECTION
-         ============================================================ -->
     <section id="about" class="section" aria-labelledby="about-title">
       <div class="section-label">About</div>
       <h2 class="section-title" id="about-title">Who I Am</h2>
@@ -345,9 +333,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SKILLS SECTION
-         ============================================================ -->
     <section id="skills" class="section" aria-labelledby="skills-title">
       <div class="section-label">Skills</div>
       <h2 class="section-title" id="skills-title">My Arsenal</h2>
@@ -394,9 +379,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         PROJECTS SECTION
-         ============================================================ -->
     <section id="projects" class="section" aria-labelledby="projects-title">
       <div class="section-label">Projects</div>
       <h2 class="section-title" id="projects-title">Latest Projects</h2>
@@ -482,9 +464,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         EXPERIENCE SECTION
-         ============================================================ -->
     <section id="experience" class="section" aria-labelledby="exp-title">
       <div class="section-label">Experience</div>
       <h2 class="section-title" id="exp-title">My Journey</h2>
@@ -503,9 +482,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         EDUCATION SECTION
-         ============================================================ -->
     <section id="education" class="section" aria-labelledby="education-title">
       <div class="section-label">Education</div>
       <h2 class="section-title" id="education-title">Academic Background</h2>
@@ -578,9 +554,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         FAQ SECTION
-         ============================================================ -->
     <section id="faq" class="section" aria-labelledby="faq-title">
       <div class="section-label">FAQ</div>
       <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
@@ -638,9 +611,6 @@
       </div>
     </section>
     
-    <!-- ============================================================
-         CONTACT SECTION
-         ============================================================ -->
     <section id="contact" class="section" aria-labelledby="contact-title">
       <div class="section-label">Contact</div>
       <h2 class="section-title" id="contact-title">Send Me a Message</h2>
@@ -678,9 +648,6 @@
       </form>
     </section>
 
-    <!-- ============================================================
-         FOOTER
-         ============================================================ -->
     <footer id="footer" class="footer" role="contentinfo">
       <div class="footer-content">
         <h2 class="footer-title">Let's Connect</h2>
