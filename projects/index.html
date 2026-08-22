@@ -9,6 +9,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
   <link rel="apple-touch-icon" href="/icon.png" />
 
+  <!-- ===== GOOGLE ANALYTICS ===== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N39EDFLMGM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N39EDFLMGM');
+  </script>
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Afee Muhammod Wafy" />
   <meta property="og:title" content="Projects — Afee Muhammod Wafy" />
@@ -19,15 +29,19 @@
   <meta property="og:image:height" content="512" />
   <meta property="og:locale" content="en_US" />
 
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@muhammodwafy" />
   <meta name="twitter:title" content="Projects — Afee Muhammod Wafy" />
   <meta name="twitter:description" content="All projects of Afee Muhammod Wafy - Full stack developer portfolio showcasing web applications and tools." />
   <meta name="twitter:image" content="https://www.amwafy.xyz/icon.png" />
 
+  <!-- ===== PERFORMANCE OPTIMIZATION ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" />
+  <link rel="preload" href="/style.css" as="style" />
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="/style.css" />
 </head>
@@ -156,7 +170,6 @@
           </div>
           <h3 class="project-title">WafyURL</h3>
           <p class="project-desc">Premium full-stack link management platform with QR code generator and real-time analytics dashboard.</p>
-
           <p class="project-problem" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 6px;">
             <span style="font-weight: 600; color: var(--text-primary);">Problem:</span> 
             Existing link shorteners lacked analytics and QR features.
@@ -169,7 +182,6 @@
             <span style="font-weight: 500; color: var(--text-secondary);">What I learned:</span> 
             Flask routing, database modeling, chart.js, and deployment.
           </p>
-
           <div class="project-tags">
             <span>Python</span>
             <span>Flask</span>
@@ -179,7 +191,7 @@
           </div>
         </div>
 
-        <!-- Project 2: WafyDev (UPDATED DESCRIPTION) -->
+        <!-- Project 2: WafyDev -->
         <div class="project-card" data-tags="html css js">
           <div class="project-top">
             <div class="project-icon" aria-hidden="true">
@@ -196,7 +208,6 @@
           </div>
           <h3 class="project-title">WafyDev</h3>
           <p class="project-desc">All‑in‑one developer toolbox with 9 powerful utilities — Password Generator, QR Generator, Typing Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette. Built for speed, privacy, and everyday productivity.</p>
-
           <p class="project-problem" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 6px;">
             <span style="font-weight: 600; color: var(--text-primary);">Problem:</span> 
             Developers often need quick tools but don't want to rely on external sites.
@@ -209,7 +220,6 @@
             <span style="font-weight: 500; color: var(--text-secondary);">What I learned:</span> 
             Client-side JavaScript, localStorage, and building privacy-first tools.
           </p>
-
           <div class="project-tags">
             <span>HTML</span>
             <span>CSS</span>
@@ -234,7 +244,6 @@
           </div>
           <h3 class="project-title">AstroWafy</h3>
           <p class="project-desc">Automated web application that connects directly with NASA's APOD API to bring daily space imagery and astronomical data.</p>
-
           <p class="project-problem" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 6px;">
             <span style="font-weight: 600; color: var(--text-primary);">Problem:</span> 
             Space enthusiasts need a simple way to access NASA's daily astronomy content.
@@ -247,7 +256,6 @@
             <span style="font-weight: 500; color: var(--text-secondary);">What I learned:</span> 
             API integration, JSON parsing, dynamic content rendering, and responsive image handling.
           </p>
-
           <div class="project-tags">
             <span>HTML</span>
             <span>CSS</span>
