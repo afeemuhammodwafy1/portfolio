@@ -75,9 +75,6 @@ textarea:focus-visible {
   top: 0;
 }
 
-/* ============================================================
-   SIDEBAR
-   ============================================================ */
 .sidebar {
   position: fixed;
   left: 0;
@@ -203,9 +200,6 @@ textarea:focus-visible {
   background: rgba(255, 255, 255, 0.02);
 }
 
-/* ============================================================
-   MOBILE HEADER & NAV
-   ============================================================ */
 .mobile-header {
   display: none;
   position: fixed;
@@ -328,9 +322,6 @@ textarea:focus-visible {
   stroke: var(--text-secondary) !important;
 }
 
-/* ============================================================
-   MAIN CONTENT
-   ============================================================ */
 .main-content {
   margin-left: var(--sidebar-width);
   flex: 1;
@@ -347,7 +338,6 @@ textarea:focus-visible {
   justify-content: center;
 }
 
-/* FAQ & Contact Section Gap Fix */
 .section-faq {
   padding-bottom: 10px !important;
   min-height: auto !important;
@@ -375,9 +365,6 @@ textarea:focus-visible {
   color: var(--text-primary);
 }
 
-/* ============================================================
-   HERO
-   ============================================================ */
 .hero {
   padding-top: 100px;
   padding-bottom: 60px;
@@ -486,9 +473,6 @@ textarea:focus-visible {
   margin-bottom: 36px;
 }
 
-/* ============================================================
-   BUTTONS
-   ============================================================ */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -549,9 +533,6 @@ textarea:focus-visible {
   stroke: var(--text-primary);
 }
 
-/* ============================================================
-   SOCIAL ICONS
-   ============================================================ */
 .hero-social {
   display: flex;
   gap: 12px;
@@ -590,9 +571,6 @@ textarea:focus-visible {
   fill: var(--text-primary);
 }
 
-/* ============================================================
-   SCROLL INDICATOR
-   ============================================================ */
 .scroll-indicator {
   display: flex;
   flex-direction: column;
@@ -624,9 +602,6 @@ textarea:focus-visible {
   50% { transform: translateY(6px); }
 }
 
-/* ============================================================
-   ABOUT
-   ============================================================ */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -697,9 +672,6 @@ textarea:focus-visible {
   letter-spacing: -0.01em;
 }
 
-/* ============================================================
-   SKILLS
-   ============================================================ */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -763,9 +735,6 @@ textarea:focus-visible {
   color: var(--text-primary);
 }
 
-/* ============================================================
-   PROJECTS
-   ============================================================ */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -898,9 +867,6 @@ textarea:focus-visible {
   color: var(--text-muted);
 }
 
-/* ============================================================
-   FILTER BAR
-   ============================================================ */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -942,9 +908,6 @@ textarea:focus-visible {
   border-color: var(--text-primary);
 }
 
-/* ============================================================
-   EXPERIENCE
-   ============================================================ */
 .exp-timeline {
   display: flex;
   flex-direction: column;
@@ -1034,9 +997,6 @@ textarea:focus-visible {
   color: var(--text-primary);
 }
 
-/* ============================================================
-   EDUCATION
-   ============================================================ */
 .edu-sub-heading {
   font-size: 1.2rem;
   font-weight: 600;
@@ -1151,9 +1111,6 @@ textarea:focus-visible {
   line-height: 1.7;
 }
 
-/* ============================================================
-   CERTIFICATIONS
-   ============================================================ */
 .cert-grid-home {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1166,14 +1123,6 @@ textarea:focus-visible {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   margin-bottom: 40px;
-}
-
-.cert-view-all {
-  text-align: center;
-}
-
-.cert-back-home {
-  text-align: center;
 }
 
 .cert-item {
@@ -1227,16 +1176,12 @@ textarea:focus-visible {
   color: var(--text-primary);
 }
 
-/* ============================================================
-   FAQ (Updated details & summary design)
-   ============================================================ */
 .faq-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* Details Accordion Styling */
 details.faq-item {
   background: var(--bg-card, #161b22);
   border: 1px solid var(--border, #30363d);
@@ -1256,7 +1201,7 @@ details.faq-item summary {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-primary);
-  list-style: none; /* Hide default triangle arrow */
+  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1269,12 +1214,10 @@ details.faq-item summary:focus-visible {
   border-radius: 4px;
 }
 
-/* Hide WebKit default marker */
 details.faq-item summary::-webkit-details-marker {
   display: none;
 }
 
-/* Custom dropdown icon */
 details.faq-item summary::after {
   content: '⌄';
   font-size: 1.5rem;
@@ -1284,7 +1227,6 @@ details.faq-item summary::after {
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Rotate icon when open */
 details[open].faq-item summary::after {
   transform: rotate(180deg);
   color: var(--text-primary);
@@ -1303,9 +1245,6 @@ details[open].faq-item summary::after {
   margin: 0;
 }
 
-/* ============================================================
-   CONTACT FORM
-   ============================================================ */
 .contact-form {
   max-width: 560px;
   width: 100%;
@@ -1315,7 +1254,6 @@ details[open].faq-item summary::after {
   margin-bottom: 20px;
 }
 
-/* Honeypot: visually hidden */
 .hp-field {
   position: absolute;
   left: -9999px;
@@ -1421,9 +1359,6 @@ details[open].faq-item summary::after {
   color: #ef4444;
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 .footer {
   padding: 80px 60px 40px;
   border-top: 1px solid var(--border);
@@ -1501,9 +1436,6 @@ details[open].faq-item summary::after {
   letter-spacing: 0.3px;
 }
 
-/* ============================================================
-   BACK TO TOP
-   ============================================================ */
 .back-top {
   position: fixed;
   bottom: 28px;
@@ -1542,36 +1474,6 @@ details[open].faq-item summary::after {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* ============================================================
-   FAQ TOGGLE BUTTON (Title + Arrow) 
-   [Kept for compatibility, though you can delete this section 
-   if you removed the old toggle button from HTML]
-   ============================================================ */
-#faqToggleBtn {
-  cursor: pointer;
-  user-select: none;
-}
-
-#faqToggleBtn:hover {
-  opacity: 0.7;
-}
-
-#faqToggleIcon {
-  display: inline-flex;
-  align-items: center;
-  transition: transform 0.3s ease;
-  color: var(--text-muted);
-}
-
-#faqToggleIcon svg {
-  width: 28px;
-  height: 28px;
-  stroke: currentColor;
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
 @media (max-width: 1024px) {
   .hero-name { font-size: 3rem; }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1601,12 +1503,9 @@ details[open].faq-item summary::after {
   .edu-sub-heading { font-size: 1rem; margin-bottom: 18px; }
   .exp-content { padding: 18px; }
   .exp-title { font-size: 0.95rem; }
-  
-  /* Details FAQ Mobile Tweaks */
   details.faq-item { padding: 12px 14px; }
   details.faq-item summary { font-size: 0.85rem; min-height: 24px; }
   .faq-answer p { font-size: 0.8rem; }
-  
   .footer { padding: 50px 20px 28px; }
   .footer-title { font-size: 1.5rem; }
   .back-top { bottom: 18px; right: 18px; width: 36px; height: 36px; }
@@ -1631,11 +1530,8 @@ details[open].faq-item summary::after {
   .edu-content { padding: 14px; }
   .edu-sub-heading { font-size: 0.9rem; }
   .exp-content { padding: 14px; }
-  
-  /* Details FAQ Mobile Mini Tweaks */
   details.faq-item { padding: 10px 12px; }
   details.faq-item summary { font-size: 0.8rem; }
-  
   .filter-bar { gap: 6px; margin-bottom: 20px; }
   .filter-btn { font-size: 0.65rem; padding: 5px 12px; min-height: 32px; }
   .section-faq { padding-bottom: 2px !important; }
