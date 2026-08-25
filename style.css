@@ -810,6 +810,11 @@ textarea:focus-visible {
   gap: 10px;
 }
 
+.project-links-top a,
+.project-links-top span {
+  position: relative;
+}
+
 .project-links-top a {
   color: var(--text-muted);
   transition: var(--transition);
@@ -832,6 +837,54 @@ textarea:focus-visible {
   fill: var(--text-primary);
 }
 
+/* Tooltip Styles */
+.project-links-top a:hover::after,
+.project-links-top span:hover::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  padding: 4px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  font-family: var(--font);
+  letter-spacing: 0.3px;
+}
+
+/* Disabled Blog Icon (AstroWafy) */
+.project-links-top span {
+  color: var(--text-muted);
+  opacity: 0.3;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.project-links-top span svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--text-muted);
+  fill: none;
+}
+
+.project-links-top span:hover {
+  opacity: 0.3;
+}
+
+.project-links-top span:hover::after {
+  opacity: 1;
+}
+
 .project-title {
   font-size: 1.1rem;
   font-weight: 600;
@@ -852,10 +905,27 @@ textarea:focus-visible {
   text-overflow: ellipsis;
 }
 
+.project-problem,
+.project-solution,
+.project-learn {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.project-learn {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+  margin-top: 6px;
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin-top: 10px;
 }
 
 .project-tags span {
@@ -995,6 +1065,12 @@ textarea:focus-visible {
   font-weight: 600;
   margin-bottom: 2px;
   color: var(--text-primary);
+}
+
+.exp-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 .edu-sub-heading {
@@ -1183,9 +1259,9 @@ textarea:focus-visible {
 }
 
 details.faq-item {
-  background: var(--bg-card, #161b22);
-  border: 1px solid var(--border, #30363d);
-  border-radius: var(--radius, 8px);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   padding: 14px 18px;
   cursor: pointer;
   transition: border-color 0.2s ease, background 0.3s ease;
@@ -1516,6 +1592,12 @@ details[open].faq-item summary::after {
   .filter-btn { font-size: 0.7rem; padding: 6px 14px; min-height: 36px; }
   .section-faq { padding-bottom: 5px !important; }
   .section-contact { padding-top: 5px !important; }
+  .project-links-top a:hover::after,
+  .project-links-top span:hover::after {
+    bottom: -24px;
+    font-size: 0.5rem;
+    padding: 3px 8px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1536,4 +1618,10 @@ details[open].faq-item summary::after {
   .filter-btn { font-size: 0.65rem; padding: 5px 12px; min-height: 32px; }
   .section-faq { padding-bottom: 2px !important; }
   .section-contact { padding-top: 2px !important; }
+  .project-links-top a:hover::after,
+  .project-links-top span:hover::after {
+    bottom: -22px;
+    font-size: 0.5rem;
+    padding: 2px 6px;
+  }
 }
