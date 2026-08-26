@@ -432,28 +432,34 @@ h1,h2,h3{ font-family:var(--display); font-weight:600; letter-spacing:-.01em; ma
   }
 
   .hero-tag {
-    font-size: 0.72rem;
-    padding: 4px 11px;
-    margin-top: 6px;
-    margin-bottom: 24px;
+    font-size: 0.68rem;
+    padding: 3px 9px;
+    gap: 6px;
+    margin-top: 4px;
+    margin-bottom: 18px;
+  }
+
+  .hero-tag .pulse {
+    width: 5px;
+    height: 5px;
   }
 
   .hero-name {
     font-size: clamp(1.35rem, 6.2vw, 1.85rem);
     white-space: nowrap;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     letter-spacing: -0.01em;
   }
 
   .hero-role {
     font-size: 0.95rem;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
 
   .hero-desc {
     font-size: 0.92rem;
-    line-height: 1.6;
-    margin-bottom: 24px;
+    line-height: 1.65;
+    margin-bottom: 32px;
     max-width: 100%;
   }
 
