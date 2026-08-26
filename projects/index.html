@@ -1,399 +1,346 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects - Afee Muhammod Wafy</title>
-  <meta name="description" content="All projects of Afee Muhammod Wafy - Full stack developer portfolio showcasing web applications and tools." />
-  <link rel="canonical" href="https://www.amwafy.xyz/projects/" />
-  <link rel="icon" type="image/webp" sizes="32x32" href="/icon.webp" />
-  <link rel="apple-touch-icon" href="/icon.webp" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Afee Muhammod Wafy</title>
+<meta name="description" content="All projects by Afee Muhammod Wafy — full-stack apps, developer tools, and API-powered experiments built with Python, Flask, and JavaScript.">
+<meta name="author" content="Afee Muhammod Wafy">
+<link rel="canonical" href="https://www.amwafy.xyz/projects/">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N39EDFLMGM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-N39EDFLMGM');
-  </script>
+<link rel="icon" type="image/webp" sizes="32x32" href="../icon.webp">
+<link rel="apple-touch-icon" href="../icon.webp">
 
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Afee Muhammod Wafy" />
-  <meta property="og:title" content="Projects — Afee Muhammod Wafy" />
-  <meta property="og:description" content="All projects of Afee Muhammod Wafy - Full stack developer portfolio showcasing web applications and tools." />
-  <meta property="og:url" content="https://www.amwafy.xyz/projects/" />
-  <meta property="og:image" content="https://www.amwafy.xyz/icon.webp" />
-  <meta property="og:image:width" content="512" />
-  <meta property="og:image:height" content="512" />
-  <meta property="og:locale" content="en_US" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N39EDFLMGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N39EDFLMGM');
+</script>
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@muhammodwafy" />
-  <meta name="twitter:title" content="Projects — Afee Muhammod Wafy" />
-  <meta name="twitter:description" content="All projects of Afee Muhammod Wafy - Full stack developer portfolio showcasing web applications and tools." />
-  <meta name="twitter:image" content="https://www.amwafy.xyz/icon.webp" />
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Afee Muhammod Wafy">
+<meta property="og:title" content="Projects — Afee Muhammod Wafy">
+<meta property="og:description" content="All projects by Afee Muhammod Wafy — full-stack apps, developer tools, and API-powered experiments built with Python, Flask, and JavaScript.">
+<meta property="og:url" content="https://www.amwafy.xyz/projects/">
+<meta property="og:image" content="https://www.amwafy.xyz/image-og.png">
+<meta property="og:locale" content="en_US">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" />
-  <link rel="preload" href="/style.css" as="style" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@muhammodwafy">
+<meta name="twitter:title" content="Projects — Afee Muhammod Wafy">
+<meta name="twitter:description" content="All projects by Afee Muhammod Wafy — full-stack apps, developer tools, and API-powered experiments built with Python, Flask, and JavaScript.">
+<meta name="twitter:image" content="https://www.amwafy.xyz/image-og.png">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="/style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
+<link rel="preload" href="../style.css" as="style">
 
-  <style>
-    .project-links-top a,
-    .project-links-top span {
-      position: relative;
-    }
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../style.css">
 
-    .project-links-top a:hover::after,
-    .project-links-top span:hover::after {
-      content: attr(aria-label);
-      position: absolute;
-      bottom: -28px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.6rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      background: var(--bg-card);
-      padding: 4px 12px;
-      border-radius: 6px;
-      white-space: nowrap;
-      border: 1px solid var(--border);
-      z-index: 10;
-      pointer-events: none;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-      font-family: var(--font);
-      letter-spacing: 0.3px;
-    }
-
-    .project-links-top span {
-      color: var(--text-muted);
-      opacity: 0.3;
-      cursor: default;
-      display: flex;
-      align-items: center;
-      transition: opacity 0.3s ease;
-    }
-
-    .project-links-top span svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--text-muted);
-      fill: none;
-    }
-
-    .project-links-top span:hover {
-      opacity: 0.3;
-    }
-
-    .project-links-top span:hover::after {
-      opacity: 1;
-    }
-  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.amwafy.xyz/#person",
+  "name": "Afee Muhammod Wafy",
+  "alternateName": ["Wafy", "Afee Wafy", "আফী মুহাম্মদ ওয়াফী", "আফী ওয়াফী"],
+  "jobTitle": "Web Developer & Science Student",
+  "birthDate": "2008-03-27",
+  "nationality": { "@type": "Country", "name": "Bangladesh" },
+  "url": "https://www.amwafy.xyz/",
+  "image": "https://www.amwafy.xyz/image-og.png",
+  "email": "afeemuhammodwafy@yahoo.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rangpur",
+    "addressCountry": "Bangladesh"
+  },
+  "sameAs": [
+    "https://github.com/afeemuhammodwafy1",
+    "https://bd.linkedin.com/in/afeemuhammodwafy1",
+    "https://dev.to/afeemuhammodwafy",
+    "https://twitter.com/muhammodwafy",
+    "https://instagram.com/afeemuhammodwafy",
+    "https://facebook.com/afeemuhammodwafy",
+    "https://www.pinterest.com/afeemuhammodwafy",
+    "https://www.flickr.com/photos/afeemuhammodwafy"
+  ],
+  "knowsAbout": [
+    "Front-End Development",
+    "Cybersecurity",
+    "AI",
+    "Python",
+    "JavaScript",
+    "Flask",
+    "Web Development Portfolio"
+  ],
+  "description": "Personal developer portfolio of Afee Muhammod Wafy, a science student and developer from Bangladesh building full-stack web projects."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Afee Muhammod Wafy",
+  "url": "https://www.amwafy.xyz/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Projects — Afee Muhammod Wafy",
+  "url": "https://www.amwafy.xyz/projects/",
+  "isPartOf": { "@type": "WebSite", "name": "Afee Muhammod Wafy", "url": "https://www.amwafy.xyz/" }
+}
+</script>
 </head>
 <body>
 
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main" class="visually-hidden">Skip to content</a>
 
-  <aside class="sidebar" role="navigation" aria-label="Main navigation">
-    <div class="sidebar-brand">
-      <a href="/" aria-label="Home" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 6px;">
-        <span class="brand-dot" aria-hidden="true"></span>
-        <span class="brand-text">WAFY</span>
-      </a>
-    </div>
-    <nav class="sidebar-nav" role="menubar">
-      <a href="/" class="nav-link" data-section="home" role="menuitem">
-        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1m-2 0h2"/></svg>
-        <span>Home</span>
-      </a>
-      <a href="/#about" class="nav-link" data-section="about" role="menuitem">
-        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0z"/><path d="M12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-        <span>About</span>
-      </a>
-      <a href="/#skills" class="nav-link" data-section="skills" role="menuitem">
-        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        <span>Skills</span>
-      </a>
-      <a href="/#projects" class="nav-link active" data-section="projects" role="menuitem" aria-current="page">
-        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
-        <span>Projects</span>
-      </a>
-      <a href="/#experience" class="nav-link" data-section="experience" role="menuitem">
-        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-        <span>Experience</span>
-      </a>
-      <a href="/#education" class="nav-link" data-section="education" role="menuitem">
-        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        <span>Education</span>
-      </a>
-      <a href="/#contact" class="nav-link" data-section="contact" role="menuitem">
-        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span>Contact</span>
-      </a>
-    </nav>
-    <div class="sidebar-footer">
-      <a href="/Resume.pdf" download="Afee_Muhammod_Wafy_Resume.pdf" class="sidebar-resume" id="sidebarResume" aria-label="Download resume (PDF)">
-        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-        <span>Resume</span>
-      </a>
-    </div>
-  </aside>
+<nav class="nav" aria-label="Primary">
+  <div class="container">
+    <a href="../" class="brand"><span class="dot"></span>WAFY</a>
+    
+    <ul class="nav-links" id="nav-links">
+      <li>
+        <a href="../">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="../#about">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          About
+        </a>
+      </li>
+      <li>
+        <a href="../#skills">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Skills
+        </a>
+      </li>
+      <li>
+        <a href="./">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          Projects
+        </a>
+      </li>
+      <li>
+        <a href="../#experience">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          Experience
+        </a>
+      </li>
+      <li>
+        <a href="../#education">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          Education
+        </a>
+      </li>
+      <li>
+        <a href="../#contact">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Contact
+        </a>
+      </li>
 
-  <header class="mobile-header" role="banner">
-    <a href="/" aria-label="Home" style="text-decoration: none; color: var(--text-primary);">
-      <span class="mobile-brand">WAFY</span>
-    </a>
-    <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+      <li class="mobile-drawer-extra">
+        <a href="../Resume.pdf" target="_blank" rel="noopener">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          Resume
+        </a>
+        <a href="../#contact" class="btn-connect">Let's Connect</a>
+        <div class="mobile-drawer-socials">
+          <a href="https://github.com/afeemuhammodwafy1" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.25 5.68.42.36.78 1.08.78 2.18v3.23c0 .3.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
+          </a>
+          <a href="https://bd.linkedin.com/in/afeemuhammodwafy1" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+          </a>
+          <a href="https://dev.to/afeemuhammodwafy" target="_blank" rel="noopener" aria-label="Dev.to">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.28-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.3.5.32.6.32 2.87 0 2.13-.03 2.44-.47 3zm4.05-4.84h-2.7v1.15h1.42v1.66h-1.42v1.6h2.7v1.66h-2.68c-1.06 0-1.66-.15-1.94-.5-.32-.4-.36-.62-.36-2.32V9.97c0-1.32.03-1.58.28-1.94.3-.4.72-.5 1.98-.5h2.72v1.65zm3.63 6.6c-.55 0-1.02-.35-1.19-.88L13.7 8.53h1.53l.8 3.16.8-3.16h1.53l-1.4 8.53z"/></svg>
+          </a>
+          <a href="https://twitter.com/muhammodwafy" target="_blank" rel="noopener" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.4 8.44L23.3 22h-6.8l-5.3-6.9-6 6.9H1.9l7.9-9.05L1 2h6.9l4.8 6.3L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>
+          </a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="../Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Resume
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+  <header class="hero" style="padding-bottom:60px;">
+    <div class="container">
+      <span class="eyebrow">projects</span>
+      <h1 class="section-title reveal" style="font-size:clamp(2rem,4vw,3rem)">All Projects</h1>
+      <p class="section-lead reveal">Every full-stack app, developer tool, and API experiment I've shipped so far — filter by stack to find what you're looking for.</p>
+    </div>
   </header>
 
-  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
-    <a href="/" class="mobile-nav-link" data-section="home">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1m-2 0h2"/></svg>
-      Home
-    </a>
-    <a href="/#about" class="mobile-nav-link" data-section="about">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0z"/><path d="M12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-      About
-    </a>
-    <a href="/#skills" class="mobile-nav-link" data-section="skills">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-      Skills
-    </a>
-    <a href="/#projects" class="mobile-nav-link active" data-section="projects" aria-current="page">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
-      Projects
-    </a>
-    <a href="/#experience" class="mobile-nav-link" data-section="experience">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-      Experience
-    </a>
-    <a href="/#education" class="mobile-nav-link" data-section="education">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-      Education
-    </a>
-    <a href="/#contact" class="mobile-nav-link" data-section="contact">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Contact
-    </a>
-    <a href="/Resume.pdf" download="Afee_Muhammod_Wafy_Resume.pdf" class="mobile-nav-link resume-mobile">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-      Resume
-    </a>
-  </div>
-
-  <main class="main-content" id="main-content" role="main">
-
-    <section class="section" aria-labelledby="projects-page-title">
-      <div class="section-label">Projects</div>
-      <h1 class="section-title" id="projects-page-title">All Projects</h1>
-
-      <div class="filter-bar" role="group" aria-label="Filter projects by technology">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="python">Python</button>
-        <button class="filter-btn" data-filter="html-css-js">HTML / CSS / JS</button>
-        <button class="filter-btn" data-filter="api">API</button>
+  <section class="section" style="padding-top:0; border-top:none;">
+    <div class="container">
+      <div class="projects-head">
+        <div></div>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="python">Python</button>
+          <button class="filter-btn" data-filter="web">HTML / CSS / JS</button>
+          <button class="filter-btn" data-filter="api">API</button>
+        </div>
       </div>
 
-      <div class="projects-grid" id="projectsGrid">
+      <div class="project-list">
+        <article class="project-card reveal" data-categories="python web">
+          <div>
+            <div class="project-head">
+              <h3>WafyURL</h3>
+            </div>
+            <div class="project-tags">
+              <span>Python</span><span>Flask</span><span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+            <p class="project-desc">Premium full-stack link management platform with QR code generator and real-time analytics dashboard.</p>
+          </div>
+          <div class="project-meta">
+            <div class="pm-block"><span class="lbl">problem</span><p>Existing link shorteners lacked analytics and QR features.</p></div>
+            <div class="pm-block"><span class="lbl">solution</span><p>Built a full-stack platform with Flask, real-time dashboard, and dynamic QR generation.</p></div>
+            <div class="pm-block"><span class="lbl">learned</span><p>Flask routing, database modeling, chart.js, and deployment.</p></div>
+            <div class="project-links">
+              <a href="https://github.com/afeemuhammodwafy1/wafyurl" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.25 5.68.42.36.78 1.08.78 2.18v3.23c0 .3.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
+                Source
+              </a>
+              <a href="https://url.amwafy.xyz/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+              <a href="https://dev.to/afeemuhammodwafy/building-wafyurl-a-high-performance-url-shortener-with-real-time-analytics-security-3n33" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                Blog Post
+              </a>
+            </div>
+          </div>
+        </article>
 
-        <!-- WafyURL -->
-        <div class="project-card" data-tags="python flask html css js">
-          <div class="project-top">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        <article class="project-card reveal" data-categories="web">
+          <div>
+            <div class="project-head">
+              <h3>WafyDev</h3>
             </div>
-            <div class="project-links-top">
-              <a href="https://github.com/afeemuhammodwafy1/wafyurl" target="_blank" rel="noopener noreferrer" aria-label="Source code">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            <p class="project-desc">All-in-one developer toolbox with 9 powerful utilities — Password Generator, QR Generator, Typing Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette. Built for speed, privacy, and everyday productivity.</p>
+          </div>
+          <div class="project-meta">
+            <div class="pm-block"><span class="lbl">problem</span><p>Developers often need quick tools but don't want to rely on external sites.</p></div>
+            <div class="pm-block"><span class="lbl">solution</span><p>Built a lightweight suite with essential utilities that work offline and respect user privacy.</p></div>
+            <div class="pm-block"><span class="lbl">learned</span><p>Client-side JavaScript, localStorage, and building privacy-first tools.</p></div>
+            <div class="project-links">
+              <a href="https://github.com/afeemuhammodwafy1/wafydev" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.25 5.68.42.36.78 1.08.78 2.18v3.23c0 .3.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
+                Source
               </a>
-              <a href="https://url.amwafy.xyz/" target="_blank" rel="noopener noreferrer" aria-label="Live demo">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <a href="https://afeemuhammodwafy1.github.io/wafydev/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
               </a>
-              <a href="https://dev.to/afeemuhammodwafy/building-wafyurl-a-high-performance-url-shortener-with-real-time-analytics-security-3n33" target="_blank" rel="noopener noreferrer" aria-label="Read blog post">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
-                  <polyline points="10 9 9 9 8 9"/>
-                </svg>
+              <a href="https://dev.to/afeemuhammodwafy/why-i-built-wafydev-a-zero-dependency-100-client-side-developer-suite-1o9m" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                Blog Post
               </a>
             </div>
           </div>
-          <h3 class="project-title">WafyURL</h3>
-          <p class="project-desc">Premium full-stack link management platform with QR code generator and real-time analytics dashboard.</p>
-          <p class="project-problem" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 6px;">
-            <span style="font-weight: 600; color: var(--text-primary);">Problem:</span> 
-            Existing link shorteners lacked analytics and QR features.
-          </p>
-          <p class="project-solution" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-            <span style="font-weight: 600; color: var(--text-primary);">Solution:</span> 
-            Built a full-stack platform with Flask, real-time dashboard, and dynamic QR generation.
-          </p>
-          <p class="project-learn" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; border-top: 1px solid var(--border); padding-top: 8px;">
-            <span style="font-weight: 500; color: var(--text-secondary);">What I learned:</span> 
-            Flask routing, database modeling, chart.js, and deployment.
-          </p>
-          <div class="project-tags">
-            <span>Python</span>
-            <span>Flask</span>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
-          </div>
-        </div>
+        </article>
 
-        <!-- WafyDev -->
-        <div class="project-card" data-tags="html css js">
-          <div class="project-top">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        <article class="project-card reveal" data-categories="web api">
+          <div>
+            <div class="project-head">
+              <h3>AstroWafy</h3>
             </div>
-            <div class="project-links-top">
-              <a href="https://github.com/afeemuhammodwafy1/wafydev" target="_blank" rel="noopener noreferrer" aria-label="Source code">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-              <a href="https://afeemuhammodwafy1.github.io/wafydev/" target="_blank" rel="noopener noreferrer" aria-label="Live demo">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
-              <a href="https://dev.to/afeemuhammodwafy/why-i-built-wafydev-a-zero-dependency-100-client-side-developer-suite-1o9m" target="_blank" rel="noopener noreferrer" aria-label="Read blog post">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
-                  <polyline points="10 9 9 9 8 9"/>
-                </svg>
-              </a>
-            </div>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JS</span><span>NASA APOD API</span></div>
+            <p class="project-desc">Automated web application that connects directly with NASA's APOD API to bring daily space imagery and astronomical data.</p>
           </div>
-          <h3 class="project-title">WafyDev</h3>
-          <p class="project-desc">All‑in‑one developer toolbox with 9 powerful utilities — Password Generator, QR Generator, Typing Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette. Built for speed, privacy, and everyday productivity.</p>
-          <p class="project-problem" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 6px;">
-            <span style="font-weight: 600; color: var(--text-primary);">Problem:</span> 
-            Developers often need quick tools but don't want to rely on external sites.
-          </p>
-          <p class="project-solution" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-            <span style="font-weight: 600; color: var(--text-primary);">Solution:</span> 
-            Built a lightweight suite with essential utilities that work offline and respect user privacy.
-          </p>
-          <p class="project-learn" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; border-top: 1px solid var(--border); padding-top: 8px;">
-            <span style="font-weight: 500; color: var(--text-secondary);">What I learned:</span> 
-            Client-side JavaScript, localStorage, and building privacy-first tools.
-          </p>
-          <div class="project-tags">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
-          </div>
-        </div>
-
-        <!-- AstroWafy -->
-        <div class="project-card" data-tags="html css js api">
-          <div class="project-top">
-            <div class="project-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </div>
-            <div class="project-links-top">
-              <a href="https://github.com/afeemuhammodwafy1/astrowafy" target="_blank" rel="noopener noreferrer" aria-label="Source code">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <div class="project-meta">
+            <div class="pm-block"><span class="lbl">problem</span><p>Space enthusiasts need a simple way to access NASA's daily astronomy content.</p></div>
+            <div class="pm-block"><span class="lbl">solution</span><p>Built a clean, responsive interface that fetches and displays APOD data with explanations.</p></div>
+            <div class="pm-block"><span class="lbl">learned</span><p>API integration, JSON parsing, dynamic content rendering, and responsive image handling.</p></div>
+            <div class="project-links">
+              <a href="https://github.com/afeemuhammodwafy1/astrowafy" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.25 5.68.42.36.78 1.08.78 2.18v3.23c0 .3.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
+                Source
               </a>
-              <a href="https://astro.amwafy.xyz/" target="_blank" rel="noopener noreferrer" aria-label="Live demo">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <a href="https://astro.amwafy.xyz/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
               </a>
-              <span aria-label="Blog post coming soon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
-                  <polyline points="10 9 9 9 8 9"/>
-                </svg>
-              </span>
+              <span style="font-family:var(--mono); font-size:.82rem; color:var(--text-faint); padding:9px 4px;">Blog post coming soon</span>
             </div>
           </div>
-          <h3 class="project-title">AstroWafy</h3>
-          <p class="project-desc">Automated web application that connects directly with NASA's APOD API to bring daily space imagery and astronomical data.</p>
-          <p class="project-problem" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 6px;">
-            <span style="font-weight: 600; color: var(--text-primary);">Problem:</span> 
-            Space enthusiasts need a simple way to access NASA's daily astronomy content.
-          </p>
-          <p class="project-solution" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-            <span style="font-weight: 600; color: var(--text-primary);">Solution:</span> 
-            Built a clean, responsive interface that fetches and displays APOD data with explanations.
-          </p>
-          <p class="project-learn" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; border-top: 1px solid var(--border); padding-top: 8px;">
-            <span style="font-weight: 500; color: var(--text-secondary);">What I learned:</span> 
-            API integration, JSON parsing, dynamic content rendering, and responsive image handling.
-          </p>
-          <div class="project-tags">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
-            <span>NASA APOD API</span>
-          </div>
-        </div>
-
+        </article>
       </div>
+    </div>
+  </section>
+</main>
 
-      <div class="projects-back-home">
-        <a href="/#projects" class="btn-secondary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          Back to Projects
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <h3>Let's Connect</h3>
+        <p>Feel free to reach out for collaborations, project sharing, or technical discussions.</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/afeemuhammodwafy1" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.25 5.68.42.36.78 1.08.78 2.18v3.23c0 .3.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
+        </a>
+        <a href="https://bd.linkedin.com/in/afeemuhammodwafy1" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+        </a>
+        <a href="https://dev.to/afeemuhammodwafy" target="_blank" rel="noopener" aria-label="Dev.to">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.28-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.3.5.32.6.32 2.87 0 2.13-.03 2.44-.47 3zm4.05-4.84h-2.7v1.15h1.42v1.66h-1.42v1.6h2.7v1.66h-2.68c-1.06 0-1.66-.15-1.94-.5-.32-.4-.36-.62-.36-2.32V9.97c0-1.32.03-1.58.28-1.94.3-.4.72-.5 1.98-.5h2.72v1.65zm3.63 6.6c-.55 0-1.02-.35-1.19-.88L13.7 8.53h1.53l.8 3.16.8-3.16h1.53l-1.4 8.53z"/></svg>
+        </a>
+        <a href="https://twitter.com/muhammodwafy" target="_blank" rel="noopener" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.4 8.44L23.3 22h-6.8l-5.3-6.9-6 6.9H1.9l7.9-9.05L1 2h6.9l4.8 6.3L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>
+        </a>
+        <a href="https://instagram.com/afeemuhammodwafy" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="https://facebook.com/afeemuhammodwafy" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg>
+        </a>
+        <a href="mailto:afeemuhammodwafy@yahoo.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
         </a>
       </div>
-    </section>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Afee Muhammod Wafy — Bangladesh. All rights reserved.</span>
+      <a href="../Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+    </div>
+  </div>
+</footer>
 
-    <footer id="footer" class="footer" role="contentinfo">
-      <div class="footer-content">
-        <h2 class="footer-title">Let's Connect</h2>
-        <p class="footer-desc">Feel free to reach out for collaborations, project sharing, or technical discussions.</p>
-        <div class="footer-social" aria-label="Social media links">
-          <a href="https://github.com/afeemuhammodwafy1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-          <a href="https://linkedin.com/in/afeemuhammodwafy1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="https://twitter.com/muhammodwafy" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://instagram.com/afeemuhammodwafy" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
-          <a href="https://facebook.com/afeemuhammodwafy" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="mailto:afeemuhammodwafy@yahoo.com" aria-label="Email">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
-        </div>
-        <div class="footer-divider" aria-hidden="true"></div>
-        <p class="copyright">&copy; <span id="year"></span> Afee Muhammod Wafy. All rights reserved.</p>
-      </div>
-    </footer>
+<button class="to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
 
-  </main>
-
-  <button id="backTop" class="back-top" aria-label="Back to top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
-
-  <script src="/script.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var yearSpan = document.getElementById('year');
-      if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-      }
-    });
-  </script>
-
+<script src="../script.js"></script>
 </body>
 </html>

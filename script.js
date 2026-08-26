@@ -1,341 +1,237 @@
 // ============================================================
-// PROJECT FILTER - Smooth Animation with Event Listeners
+// Afee Muhammod Wafy — Portfolio interactions
 // ============================================================
-document.addEventListener('DOMContentLoaded', function() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  
-  filterButtons.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      const filterType = this.getAttribute('data-filter');
-      const grid = this.closest('.section').querySelector('.projects-grid');
-      
-      if (!grid) return;
-      
-      const cards = grid.querySelectorAll('.project-card');
-      
-      // Update active button
-      const siblings = this.closest('.filter-bar').querySelectorAll('.filter-btn');
-      siblings.forEach(function(sib) {
-        sib.classList.remove('active');
-      });
-      this.classList.add('active');
-      
-      // Filter cards with smooth animation
-      cards.forEach(function(card, index) {
-        const tags = card.getAttribute('data-tags') || '';
-        let show = false;
-        
-        if (filterType === 'all') {
-          show = true;
-        } else if (filterType === 'python') {
-          show = tags.includes('python') || tags.includes('flask');
-        } else if (filterType === 'html-css-js') {
-          show = tags.includes('html') || tags.includes('css') || tags.includes('js');
-        } else if (filterType === 'api') {
-          show = tags.includes('api');
-        }
-        
-        // Hide animation
-        if (!show) {
-          card.classList.remove('filtering-in', 'show');
-          card.classList.add('filtering-out');
-          
-          setTimeout(function() {
-            if (!card.classList.contains('show')) {
-              card.style.display = 'none';
-            }
-          }, 400);
-        } else {
-          // Show animation with stagger effect
-          card.style.display = 'flex';
-          card.classList.remove('filtering-out');
-          card.classList.add('filtering-in');
-          
-          const delay = index * 80;
-          setTimeout(function() {
-            card.classList.add('show');
-          }, delay);
-          
-          setTimeout(function() {
-            card.classList.remove('filtering-in');
-          }, delay + 400);
-        }
+(function(){
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- current year ---------- */
+  document.querySelectorAll('[data-year]').forEach(function(el){
+    el.textContent = new Date().getFullYear();
+  });
+
+  /* ---------- nav scroll state + mobile toggle ---------- */
+  var nav = document.querySelector('.nav');
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+
+  var scrollTicking = false;
+  function onScroll(){
+    if(!nav) return;
+    nav.classList.toggle('is-scrolled', window.scrollY > 12);
+    toggleTop();
+  }
+  function onScrollRaf(){
+    if(scrollTicking) return;
+    scrollTicking = true;
+    window.requestAnimationFrame(function(){
+      onScroll();
+      scrollTicking = false;
+    });
+  }
+  window.addEventListener('scroll', onScrollRaf, { passive:true });
+  onScroll();
+
+  if(toggle && links){
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = links.classList.toggle('is-open');
+      toggle.classList.toggle('is-active', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('is-open');
+        toggle.classList.remove('is-active');
+        toggle.setAttribute('aria-expanded','false');
       });
     });
-  });
-});
 
-// ============================================================
-// MOBILE MENU
-// ============================================================
-const menuBtn = document.getElementById('menuBtn');
-const mobileNav = document.getElementById('mobileNav');
-
-if (menuBtn && mobileNav) {
-  menuBtn.addEventListener('click', function() {
-    const expanded = this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
-    this.setAttribute('aria-expanded', expanded);
-    this.classList.toggle('active');
-    mobileNav.classList.toggle('active');
-    document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-  });
-
-  document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
-    link.addEventListener('click', function() {
-      menuBtn.setAttribute('aria-expanded', 'false');
-      menuBtn.classList.remove('active');
-      mobileNav.classList.remove('active');
-      document.body.style.overflow = '';
+    document.addEventListener('click', function(e){
+      if(!links.contains(e.target) && !toggle.contains(e.target)){
+        links.classList.remove('is-open');
+        toggle.classList.remove('is-active');
+        toggle.setAttribute('aria-expanded','false');
+      }
     });
-  });
-}
-
-// ============================================================
-// TYPING EFFECT
-// ============================================================
-const roles = ["Science Student", "Web Developer", "AI & Tech Explorer"];
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const roleEl = document.getElementById('roleText');
-
-if (roleEl) {
-  function typeRole() {
-    const current = roles[roleIndex];
-    if (isDeleting) {
-      roleEl.textContent = current.slice(0, charIndex - 1);
-      charIndex--;
-    } else {
-      roleEl.textContent = current.slice(0, charIndex + 1);
-      charIndex++;
-    }
-    if (!isDeleting && charIndex === current.length) {
-      isDeleting = true;
-      setTimeout(typeRole, 1500);
-      return;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
-      setTimeout(typeRole, 300);
-      return;
-    }
-    setTimeout(typeRole, isDeleting ? 25 : 45);
   }
-  typeRole();
-}
 
-// ============================================================
-// ACTIVE NAV - Handles both index.html and subpages
-// ============================================================
-const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.nav-link');
-const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-
-function setActive(id) {
-  const isProjectsPage = window.location.pathname.includes('/projects/');
-  const isCertPage = window.location.pathname.includes('/certifications/');
-  
-  navLinks.forEach(function(link) {
-    const linkSection = link.getAttribute('data-section');
-    
-    // On projects page, keep Projects active
-    if (isProjectsPage && linkSection === 'projects') {
-      link.classList.add('active');
-      link.setAttribute('aria-current', 'page');
-      return;
-    }
-    
-    // On certifications page, keep Education active
-    if (isCertPage && linkSection === 'education') {
-      link.classList.add('active');
-      link.setAttribute('aria-current', 'page');
-      return;
-    }
-    
-    link.classList.toggle('active', linkSection === id);
-    if (linkSection === id) {
-      link.setAttribute('aria-current', 'page');
-    } else {
-      link.removeAttribute('aria-current');
-    }
-  });
-  
-  mobileLinks.forEach(function(link) {
-    const linkSection = link.getAttribute('data-section');
-    
-    if (isProjectsPage && linkSection === 'projects') {
-      link.classList.add('active');
-      link.setAttribute('aria-current', 'page');
-      return;
-    }
-    
-    if (isCertPage && linkSection === 'education') {
-      link.classList.add('active');
-      link.setAttribute('aria-current', 'page');
-      return;
-    }
-    
-    link.classList.toggle('active', linkSection === id);
-    if (linkSection === id) {
-      link.setAttribute('aria-current', 'page');
-    } else {
-      link.removeAttribute('aria-current');
-    }
-  });
-}
-
-window.addEventListener('scroll', function() {
-  let current = '';
-  sections.forEach(function(section) {
-    const top = section.offsetTop - 120;
-    if (window.scrollY >= top) {
-      current = section.id;
-    }
-  });
-  if (current) {
-    setActive(current);
+  /* ---------- back to top ---------- */
+  var toTop = document.querySelector('.to-top');
+  function toggleTop(){
+    if(!toTop) return;
+    toTop.classList.toggle('is-visible', window.scrollY > 500);
   }
-});
-
-// ============================================================
-// BACK TO TOP
-// ============================================================
-const backTop = document.getElementById('backTop');
-
-if (backTop) {
-  window.addEventListener('scroll', function() {
-    backTop.classList.toggle('visible', window.scrollY > 200);
-  });
-
-  backTop.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-// ============================================================
-// SMOOTH SCROLL
-// ============================================================
-function smoothScroll(target, duration) {
-  duration = duration || 400;
-  const start = window.scrollY;
-  const end = target.getBoundingClientRect().top + start;
-  const startTime = performance.now();
-
-  function animateScroll(currentTime) {
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const ease = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-    window.scrollTo(0, start + (end - start) * ease);
-    if (progress < 1) {
-      requestAnimationFrame(animateScroll);
-    }
+  if(toTop){
+    toTop.addEventListener('click', function(){
+      window.scrollTo({ top:0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
   }
-  requestAnimationFrame(animateScroll);
-}
 
-document.querySelectorAll('.nav-link, .mobile-nav-link, .btn-primary, .btn-secondary').forEach(function(link) {
-  link.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (href && href.startsWith('#') && !this.hasAttribute('download')) {
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        requestAnimationFrame(function() {
-          smoothScroll(target, 400);
+  /* ---------- scroll reveal ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:.12, rootMargin:'0px 0px -40px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  /* ---------- terminal typing sequence (hero signature) ---------- */
+  var typedEl = document.getElementById('typed-line');
+  var termOut = document.getElementById('terminal-output');
+  if(typedEl && termOut){
+    var script = [
+      { cmd: 'whoami', out: 'Afee Muhammod Wafy' },
+      { cmd: 'cat role.txt', out: 'Science Student & Web Developer' },
+      { cmd: 'ls focus/', out: 'python  flask  javascript  ai-exploration' },
+      { cmd: 'status --current', out: 'available for collaborations ✓' }
+    ];
+    var lineIndex = 0, charIndex = 0, phase = 'type';
+
+    function typeStep(){
+      if(reduceMotion){
+        renderAllStatic();
+        return;
+      }
+      var current = script[lineIndex];
+      if(phase === 'type'){
+        typedEl.textContent = current.cmd.slice(0, charIndex);
+        charIndex++;
+        if(charIndex > current.cmd.length){
+          phase = 'pause-before-out';
+          setTimeout(typeStep, 320);
+          return;
+        }
+        setTimeout(typeStep, 42 + Math.random()*40);
+      } else if(phase === 'pause-before-out'){
+        var outLine = document.createElement('div');
+        outLine.className = 'line out';
+        outLine.textContent = current.out;
+        termOut.appendChild(outLine);
+        phase = 'hold';
+        setTimeout(typeStep, 900);
+      } else if(phase === 'hold'){
+        lineIndex++;
+        charIndex = 0;
+        typedEl.textContent = '';
+        if(lineIndex >= script.length){
+          phase = 'done';
+          return;
+        }
+        var promptLine = document.createElement('div');
+        promptLine.className = 'line';
+        promptLine.innerHTML = '<span class="prompt">wafy@dev</span>:<span class="accent">~$</span> ';
+        var span = document.createElement('span');
+        span.id = 'typed-line-' + lineIndex;
+        promptLine.appendChild(span);
+        termOut.appendChild(promptLine);
+        typedEl = span;
+        phase = 'type';
+        setTimeout(typeStep, 300);
+      }
+    }
+
+    function renderAllStatic(){
+      termOut.innerHTML = '';
+      script.forEach(function(s){
+        var p = document.createElement('div');
+        p.className = 'line';
+        p.innerHTML = '<span class="prompt">wafy@dev</span>:<span class="accent">~$</span> ' + s.cmd;
+        var o = document.createElement('div');
+        o.className = 'line out';
+        o.textContent = s.out;
+        termOut.appendChild(p);
+        termOut.appendChild(o);
+      });
+    }
+
+    setTimeout(typeStep, 500);
+  }
+
+  /* ---------- project filters (projects/index page) ---------- */
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var projectCards = document.querySelectorAll('.project-card');
+  if(filterBtns.length && projectCards.length){
+    filterBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        filterBtns.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        var filter = btn.getAttribute('data-filter');
+        projectCards.forEach(function(card){
+          var cats = (card.getAttribute('data-categories') || '').split(' ');
+          var show = filter === 'all' || cats.indexOf(filter) !== -1;
+          card.style.display = show ? '' : 'none';
         });
-      }
-    }
-  });
-});
-
-// ============================================================
-// SCROLL INDICATOR AUTO-HIDE
-// ============================================================
-const scrollIndicator = document.getElementById('scrollIndicator');
-
-if (scrollIndicator) {
-  setTimeout(function() {
-    scrollIndicator.classList.add('fade-out');
-  }, 4000);
-
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-      scrollIndicator.classList.add('fade-out');
-    }
-  });
-}
-
-// ============================================================
-// HTML5 <details> EXCLUSIVE ACCORDION (OPTIONAL)
-// ============================================================
-document.addEventListener('DOMContentLoaded', function() {
-  const detailsElements = document.querySelectorAll('details.faq-item');
-  
-  detailsElements.forEach((targetDetail) => {
-    targetDetail.addEventListener('click', () => {
-      detailsElements.forEach((detail) => {
-        if (detail !== targetDetail) {
-          detail.removeAttribute('open');
-        }
       });
     });
-  });
-});
+  }
 
-// ============================================================
-// CONTACT FORM
-// ============================================================
-(function() {
-  const contactForm = document.getElementById('contactForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const btnText = document.getElementById('btnText');
-  const btnSpinner = document.getElementById('btnSpinner');
-  const formStatus = document.getElementById('formStatus');
-
-  if (!contactForm) return;
-
-  contactForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    // Honeypot check
-    const honeypot = contactForm.querySelector('#company');
-    if (honeypot && honeypot.value.trim() !== '') {
-      return;
-    }
-
-    submitBtn.disabled = true;
-    btnText.style.display = 'none';
-    btnSpinner.style.display = 'inline';
-    formStatus.style.display = 'none';
-
-    const formData = new FormData(this);
-
-    try {
-      const response = await fetch(this.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    if(!q || !a) return;
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item.is-open').forEach(function(other){
+        if(other !== item){
+          other.classList.remove('is-open');
+          other.querySelector('.faq-a').style.maxHeight = null;
+          other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        }
       });
-
-      if (response.ok) {
-        formStatus.className = 'form-status success';
-        formStatus.textContent = 'Your message has been sent successfully! I will get back to you soon.';
-        formStatus.style.display = 'block';
-        this.reset();
+      if(isOpen){
+        item.classList.remove('is-open');
+        a.style.maxHeight = null;
+        q.setAttribute('aria-expanded','false');
       } else {
-        throw new Error('Server error');
+        item.classList.add('is-open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+        q.setAttribute('aria-expanded','true');
       }
-    } catch (error) {
-      formStatus.className = 'form-status error';
-      formStatus.textContent = 'Failed to send message. Please try again later.';
-      formStatus.style.display = 'block';
-    } finally {
-      submitBtn.disabled = false;
-      btnText.style.display = 'inline';
-      btnSpinner.style.display = 'none';
-      setTimeout(function() {
-        formStatus.style.display = 'none';
-      }, 5000);
-    }
+    });
   });
+
+  /* ---------- contact form (Formspree AJAX) ---------- */
+  var form = document.getElementById('contact-form');
+  if(form){
+    var status = document.getElementById('form-status');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(form.company && form.company.value){ return; }
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalLabel = submitBtn ? submitBtn.textContent : '';
+      if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+      if(status){ status.textContent = ''; status.className = 'form-status'; }
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res){
+        if(res.ok){
+          if(status){ status.textContent = 'Message sent — thanks for reaching out. I\'ll reply soon.'; status.className = 'form-status ok'; }
+          form.reset();
+        } else {
+          throw new Error('Request failed');
+        }
+      }).catch(function(){
+        if(status){ status.textContent = 'Something went wrong. Please email me directly instead.'; status.className = 'form-status err'; }
+      }).finally(function(){
+        if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+      });
+    });
+  }
+
 })();

@@ -1,351 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page Not Found | Afee Muhammod Wafy</title>
-  <meta name="description" content="Page not found. Return to the portfolio of Afee Muhammod Wafy." />
-  <meta name="robots" content="noindex, follow" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Page Not Found | Afee Muhammod Wafy</title>
+<meta name="description" content="The page you're looking for doesn't exist on Afee Muhammod Wafy's portfolio.">
+<meta name="author" content="Afee Muhammod Wafy">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://www.amwafy.xyz/">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N39EDFLMGM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-N39EDFLMGM');
-  </script>
+<!-- Favicon -->
+<link rel="icon" type="image/webp" sizes="32x32" href="./icon.webp">
+<link rel="apple-touch-icon" href="./icon.webp">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/webp" sizes="32x32" href="/icon.webp" />
-  <link rel="apple-touch-icon" href="/icon.webp" />
-  <style>
-    :root {
-      --bg-primary: #0d0d0d;
-      --bg-secondary: #141414;
-      --bg-card: #1a1a1a;
-      --bg-card-hover: #222222;
-      --text-primary: #f0f0f0;
-      --text-secondary: #a8a8a8;
-      --text-muted: #6a6a6a;
-      --border: rgba(255, 255, 255, 0.04);
-      --border-hover: rgba(255, 255, 255, 0.08);
-      --font: 'Space Grotesk', sans-serif;
-      --radius: 16px;
-      --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      font-family: var(--font);
-      line-height: 1.7;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-    .error-wrapper {
-      width: 100%;
-      max-width: 920px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 50px 48px 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    .error-wrapper::before {
-      content: '';
-      position: absolute;
-      top: -40%;
-      right: -10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.015), transparent 70%);
-      pointer-events: none;
-    }
-    .error-content {
-      position: relative;
-      z-index: 1;
-    }
-    .brand {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      text-decoration: none;
-      letter-spacing: 2px;
-      display: inline-block;
-      margin-bottom: 30px;
-    }
-    .brand .accent {
-      color: var(--text-muted);
-    }
-    .error-code {
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .error-code svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--text-muted);
-    }
-    .error-title {
-      font-size: 3.2rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.05;
-      margin-bottom: 14px;
-      letter-spacing: -0.02em;
-    }
-    .error-title .highlight {
-      color: var(--text-muted);
-      opacity: 0.4;
-    }
-    .error-desc {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      margin-bottom: 28px;
-      max-width: 400px;
-    }
-    .btn-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 13px 34px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      font-family: var(--font);
-      border-radius: 50px;
-      text-decoration: none;
-      transition: var(--transition);
-      background: var(--text-primary);
-      color: var(--bg-primary);
-      border: none;
-      cursor: pointer;
-    }
-    .btn-home:hover {
-      transform: translateY(-2px) scale(1.02);
-      opacity: 0.9;
-    }
-    .btn-home svg {
-      width: 16px;
-      height: 16px;
-      transition: transform 0.3s ease;
-      stroke: var(--bg-primary);
-    }
-    .btn-home:hover svg {
-      transform: translateX(-4px);
-    }
-    .error-footer {
-      margin-top: 40px;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-    }
-    .error-footer a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.3s ease;
-      border-bottom: 1px solid transparent;
-    }
-    .error-footer a:hover {
-      color: var(--text-primary);
-      border-bottom-color: var(--text-muted);
-    }
-    .error-visual {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .big-404 {
-      font-size: 9rem;
-      font-weight: 700;
-      line-height: 1;
-      color: var(--text-primary);
-      opacity: 0.025;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      user-select: none;
-      pointer-events: none;
-      letter-spacing: -0.04em;
-    }
-    .floating-icon {
-      position: relative;
-      width: 140px;
-      height: 140px;
-      background: var(--bg-card);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border);
-      animation: float 6s ease-in-out infinite;
-    }
-    .floating-icon svg {
-      width: 60px;
-      height: 60px;
-      stroke: var(--text-secondary);
-      opacity: 0.5;
-      animation: iconPulse 3s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-14px) rotate(2deg); }
-    }
-    @keyframes iconPulse {
-      0%, 100% { transform: scale(1); opacity: 0.4; }
-      50% { transform: scale(1.06); opacity: 0.7; }
-    }
-    .orbit-ring {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      animation: spin 20s linear infinite;
-      pointer-events: none;
-    }
-    .orbit-ring:nth-child(2) {
-      width: 260px;
-      height: 260px;
-      animation-duration: 30s;
-      animation-direction: reverse;
-      opacity: 0.5;
-    }
-    .orbit-dot {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--text-muted);
-      opacity: 0.3;
-      top: -3px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .orbit-dot-2 {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--text-muted);
-      opacity: 0.2;
-      bottom: -2px;
-      left: 30%;
-    }
-    .orbit-dot-3 {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--text-muted);
-      opacity: 0.15;
-      top: 30%;
-      right: -4px;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    @media (max-width: 820px) {
-      .error-wrapper {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-        padding: 36px 24px 30px;
-      }
-      .error-content { order: 2; }
-      .error-visual { order: 1; }
-      .error-desc { max-width: 100%; margin: 0 auto 28px; }
-      .btn-home { justify-content: center; }
-      .error-title { font-size: 2.6rem; }
-      .big-404 { font-size: 6rem; }
-      .floating-icon { width: 110px; height: 110px; }
-      .floating-icon svg { width: 48px; height: 48px; }
-      .orbit-ring { width: 160px; height: 160px; }
-      .orbit-ring:nth-child(2) { width: 200px; height: 200px; }
-    }
-    @media (max-width: 480px) {
-      .error-wrapper { padding: 28px 16px 24px; border-radius: 12px; }
-      .error-title { font-size: 2rem; }
-      .error-code { font-size: 0.6rem; letter-spacing: 3px; }
-      .error-desc { font-size: 0.9rem; }
-      .btn-home { width: 100%; justify-content: center; padding: 12px 24px; font-size: 0.8rem; }
-      .floating-icon { width: 90px; height: 90px; }
-      .floating-icon svg { width: 40px; height: 40px; }
-      .big-404 { font-size: 4.5rem; }
-      .orbit-ring { width: 130px; height: 130px; }
-      .orbit-ring:nth-child(2) { width: 160px; height: 160px; }
-      .brand { font-size: 1.1rem; margin-bottom: 20px; }
-      .error-footer { margin-top: 24px; font-size: 0.6rem; }
-    }
-    @media (max-height: 600px) and (orientation: landscape) {
-      .error-wrapper {
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        padding: 24px 30px;
-        text-align: left;
-      }
-      .error-content { order: 1; }
-      .error-visual { order: 2; }
-      .error-title { font-size: 2rem; }
-      .floating-icon { width: 80px; height: 80px; }
-      .floating-icon svg { width: 36px; height: 36px; }
-      .big-404 { font-size: 4rem; }
-      .orbit-ring { width: 120px; height: 120px; }
-      .orbit-ring:nth-child(2) { width: 150px; height: 150px; }
-      .error-desc { font-size: 0.85rem; margin-bottom: 18px; }
-      .btn-home { padding: 10px 24px; font-size: 0.75rem; }
-      .error-footer { margin-top: 18px; }
-    }
-  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N39EDFLMGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N39EDFLMGM');
+</script>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Afee Muhammod Wafy">
+<meta property="og:title" content="404 — Page Not Found | Afee Muhammod Wafy">
+<meta property="og:description" content="The page you're looking for doesn't exist on Afee Muhammod Wafy's portfolio.">
+<meta property="og:url" content="https://www.amwafy.xyz/">
+<meta property="og:image" content="https://www.amwafy.xyz/image-og.png">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@muhammodwafy">
+<meta name="twitter:title" content="404 — Page Not Found | Afee Muhammod Wafy">
+<meta name="twitter:description" content="The page you're looking for doesn't exist on Afee Muhammod Wafy's portfolio.">
+<meta name="twitter:image" content="https://www.amwafy.xyz/image-og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
+<link rel="preload" href="./style.css" as="style">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
-  <div class="error-wrapper">
-    <div class="error-content">
-      <a href="/" class="brand">WAFY<span class="accent">.</span></a>
-      <div class="error-code">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="16 16 12 12 8 8"/></svg>
-        404 — Lost
-      </div>
-      <h1 class="error-title">Page Not<br /><span class="highlight">Found</span></h1>
-      <p class="error-desc">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
-      <a href="/" class="btn-home">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+
+<nav class="nav is-scrolled" aria-label="Primary">
+  <div class="container">
+    <a href="./" class="brand"><span class="dot"></span>WAFY</a>
+  </div>
+</nav>
+
+<main class="error-page">
+  <div>
+    <div class="error-code">4<span class="glitch">0</span>4</div>
+    <span class="eyebrow" style="justify-content:center; display:flex;">error</span>
+    <h1>This route doesn't exist</h1>
+    <p>The page you're looking for was moved, renamed, or never built. Let's get you back to something that resolves.</p>
+    <div class="error-actions">
+      <a href="./" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         Back to Home
       </a>
-      <div class="error-footer">&copy; 2026 Afee Muhammod Wafy. All rights reserved.</div>
-    </div>
-    <div class="error-visual">
-      <div class="big-404">404</div>
-      <div class="orbit-ring"><span class="orbit-dot"></span><span class="orbit-dot-2"></span><span class="orbit-dot-3"></span></div>
-      <div class="orbit-ring"><span class="orbit-dot" style="top:auto;bottom:-3px;left:40%;"></span></div>
-      <div class="floating-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-      </div>
+      <a href="./projects/" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        View Projects
+      </a>
     </div>
   </div>
+</main>
+
+<script src="./script.js"></script>
 </body>
 </html>
