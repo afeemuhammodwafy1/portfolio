@@ -329,25 +329,22 @@ h1,h2,h3{ font-family:var(--display); font-weight:600; letter-spacing:-.01em; ma
 
 @media (max-width: 640px) {
   .hero {
-    min-height: 100svh;
-    padding: 72px 0 20px;
-    display: flex;
-    align-items: center;
-  }
-
-  .hero .container {
-    width: 100%;
+    padding: 0 0 60px 0;
   }
 
   .hero-grid {
+    display: block;
     gap: 0;
   }
 
   .hero-content {
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 76px 0 24px 0;
   }
 
   .hero-tag {
@@ -417,7 +414,7 @@ h1,h2,h3{ font-family:var(--display); font-weight:600; letter-spacing:-.01em; ma
   }
 
   .hero-grid .terminal {
-    margin-top: 36px;
+    margin-top: 40px;
   }
 }
 
