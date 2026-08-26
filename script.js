@@ -114,90 +114,18 @@
       var speed = isDeleting ? 45 : 90;
 
       if(!isDeleting && charPos === currentRole.length){
-        speed = 1800; // Hold at full text
+        speed = 1800;
         isDeleting = true;
       } else if(isDeleting && charPos === 0){
         isDeleting = false;
         rIndex = (rIndex + 1) % roles.length;
-        speed = 400; // Pause before typing next word
+        speed = 400;
       }
 
       setTimeout(typeRole, speed);
     }
 
     typeRole();
-  }
-
-  /* ---------- terminal typing sequence (hero signature) ---------- */
-  var typedEl = document.getElementById('typed-line');
-  var termOut = document.getElementById('terminal-output');
-  if(typedEl && termOut){
-    var script = [
-      { cmd: 'whoami', out: 'Afee Muhammod Wafy' },
-      { cmd: 'cat role.txt', out: 'Science Student & Web Developer' },
-      { cmd: 'ls focus/', out: 'python  flask  javascript  ai-exploration' },
-      { cmd: 'status --current', out: 'available for collaborations ✓' }
-    ];
-    var lineIndex = 0, charIndex = 0, phase = 'type';
-
-    function typeStep(){
-      if(reduceMotion){
-        renderAllStatic();
-        return;
-      }
-      var current = script[lineIndex];
-      if(phase === 'type'){
-        typedEl.textContent = current.cmd.slice(0, charIndex);
-        charIndex++;
-        if(charIndex > current.cmd.length){
-          phase = 'pause-before-out';
-          setTimeout(typeStep, 320);
-          return;
-        }
-        setTimeout(typeStep, 42 + Math.random()*40);
-      } else if(phase === 'pause-before-out'){
-        var outLine = document.createElement('div');
-        outLine.className = 'line out';
-        outLine.textContent = current.out;
-        termOut.appendChild(outLine);
-        phase = 'hold';
-        setTimeout(typeStep, 900);
-      } else if(phase === 'hold'){
-        lineIndex++;
-        charIndex = 0;
-        typedEl.textContent = '';
-        if(lineIndex >= script.length){
-          phase = 'done';
-          return;
-        }
-        var promptLine = document.createElement('div');
-        promptLine.className = 'line';
-        promptLine.innerHTML = '<span class="prompt">wafy@dev</span>:<span class="accent">~$</span> ';
-        var span = document.createElement('span');
-        span.id = 'typed-line-' + lineIndex;
-        promptLine.appendChild(span);
-        termOut.appendChild(promptLine);
-        typedEl = span;
-        phase = 'type';
-        setTimeout(typeStep, 300);
-      }
-    }
-
-    function renderAllStatic(){
-      termOut.innerHTML = '';
-      script.forEach(function(s){
-        var p = document.createElement('div');
-        p.className = 'line';
-        p.innerHTML = '<span class="prompt">wafy@dev</span>:<span class="accent">~$</span> ' + s.cmd;
-        var o = document.createElement('div');
-        o.className = 'line out';
-        o.textContent = s.out;
-        termOut.appendChild(p);
-        termOut.appendChild(o);
-      });
-    }
-
-    setTimeout(typeStep, 500);
   }
 
   /* ---------- project filters (projects/index page) ---------- */
