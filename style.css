@@ -328,6 +328,21 @@ h1,h2,h3{ font-family:var(--display); font-weight:600; letter-spacing:-.01em; ma
 .hero-meta strong{ display:block; color:var(--text); font-size:1.05rem; font-family:var(--display); margin-bottom:2px; }
 
 @media (max-width: 640px) {
+  .hero {
+    min-height: 100svh;
+    padding: 72px 0 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero .container {
+    width: 100%;
+  }
+
+  .hero-grid {
+    gap: 0;
+  }
+
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -336,58 +351,73 @@ h1,h2,h3{ font-family:var(--display); font-weight:600; letter-spacing:-.01em; ma
   }
 
   .hero-tag {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    font-size: 0.72rem;
+    padding: 4px 10px;
     align-self: center;
   }
 
   .hero-name {
-    font-size: clamp(1.4rem, 6.8vw, 1.85rem);
-    margin-bottom: 10px;
+    font-size: clamp(1.4rem, 6.5vw, 1.8rem);
+    margin-bottom: 8px;
     white-space: normal;
   }
 
   .hero-role {
-    margin-bottom: 18px;
+    font-size: 0.92rem;
+    margin-bottom: 14px;
   }
 
   .hero-desc {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 24px;
-    max-width: 100%;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 38ch;
   }
 
   .hero-actions {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    gap: 12px;
-    margin-bottom: 32px;
+    gap: 8px;
+    margin-bottom: 22px;
   }
   
   .hero-actions .btn {
-    width: 100%;
-    padding: 13px 16px;
-    font-size: 0.88rem;
+    flex: 1 1 0;
+    padding: 10px 8px;
+    font-size: 0.78rem;
     justify-content: center;
+    gap: 6px;
   }
 
   .hero-actions .btn svg {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
   }
 
   .hero-meta {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 8px;
     width: 100%;
     text-align: center;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-soft);
   }
 
   .hero-meta div {
-    font-size: 0.72rem;
-    line-height: 1.3;
+    font-size: 0.68rem;
+    line-height: 1.25;
+  }
+
+  .hero-meta strong {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+  }
+
+  .hero-grid .terminal {
+    margin-top: 36px;
   }
 }
 
