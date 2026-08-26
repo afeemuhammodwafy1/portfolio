@@ -436,7 +436,7 @@ h1,h2,h3{ font-family:var(--display); font-weight:600; letter-spacing:-.01em; ma
     padding: 3px 9px;
     gap: 6px;
     margin-top: 4px;
-    margin-bottom: 18px;
+    margin-bottom: 38px;
   }
 
   .hero-tag .pulse {
