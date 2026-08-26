@@ -86,6 +86,48 @@
     revealEls.forEach(function(el){ el.classList.add('is-visible'); });
   }
 
+  /* ---------- hero role typing sequence ---------- */
+  var roleEl = document.getElementById('hero-typing-text');
+  if(roleEl){
+    var roles = [
+      'Web Developer',
+      'Science Student',
+      'Self-Taught Learner'
+    ];
+    var rIndex = 0, charPos = 0, isDeleting = false;
+
+    function typeRole(){
+      if(reduceMotion){
+        roleEl.textContent = roles[0];
+        return;
+      }
+      var currentRole = roles[rIndex];
+      
+      if(isDeleting){
+        roleEl.textContent = currentRole.substring(0, charPos - 1);
+        charPos--;
+      } else {
+        roleEl.textContent = currentRole.substring(0, charPos + 1);
+        charPos++;
+      }
+
+      var speed = isDeleting ? 45 : 90;
+
+      if(!isDeleting && charPos === currentRole.length){
+        speed = 1800; // Hold at full text
+        isDeleting = true;
+      } else if(isDeleting && charPos === 0){
+        isDeleting = false;
+        rIndex = (rIndex + 1) % roles.length;
+        speed = 400; // Pause before typing next word
+      }
+
+      setTimeout(typeRole, speed);
+    }
+
+    typeRole();
+  }
+
   /* ---------- terminal typing sequence (hero signature) ---------- */
   var typedEl = document.getElementById('typed-line');
   var termOut = document.getElementById('terminal-output');
