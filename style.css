@@ -436,14 +436,14 @@ h1,h2,h3{ font-family:var(--display); font-weight:600; letter-spacing:-.01em; ma
   .hero-tag {
     font-size: 0.72rem;
     padding: 4px 11px;
-    margin-bottom: 14px;
     margin-top: 6px;
+    margin-bottom: 24px;
   }
 
   .hero-name {
     font-size: clamp(1.35rem, 6.2vw, 1.85rem);
     white-space: nowrap;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     letter-spacing: -0.01em;
   }
 
