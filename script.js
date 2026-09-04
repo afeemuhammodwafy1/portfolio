@@ -1,17 +1,12 @@
-// ============================================================
-// Afee Muhammod Wafy — Portfolio interactions
-// ============================================================
 (function(){
   'use strict';
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- current year ---------- */
   document.querySelectorAll('[data-year]').forEach(function(el){
     el.textContent = new Date().getFullYear();
   });
 
-  /* ---------- nav scroll state + mobile toggle ---------- */
   var nav = document.querySelector('.nav');
   var toggle = document.querySelector('.nav-toggle');
   var links = document.querySelector('.nav-links');
@@ -58,11 +53,10 @@
     });
   }
 
-  /* ---------- back to top ---------- */
   var toTop = document.querySelector('.to-top');
   function toggleTop(){
     if(!toTop) return;
-    toTop.classList.toggle('is-visible', window.scrollY > 500);
+    toTop.classList.toggle('is-visible', window.scrollY > 400);
   }
   if(toTop){
     toTop.addEventListener('click', function(){
@@ -70,7 +64,6 @@
     });
   }
 
-  /* ---------- scroll reveal ---------- */
   var revealEls = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window && !reduceMotion){
     var io = new IntersectionObserver(function(entries){
@@ -86,7 +79,6 @@
     revealEls.forEach(function(el){ el.classList.add('is-visible'); });
   }
 
-  /* ---------- hero role typing sequence ---------- */
   var roleEl = document.getElementById('hero-typing-text');
   if(roleEl){
     var roles = [
@@ -128,7 +120,6 @@
     typeRole();
   }
 
-  /* ---------- project filters (projects/index page) ---------- */
   var filterBtns = document.querySelectorAll('.filter-btn');
   var projectCards = document.querySelectorAll('.project-card');
   if(filterBtns.length && projectCards.length){
@@ -146,7 +137,6 @@
     });
   }
 
-  /* ---------- FAQ accordion ---------- */
   document.querySelectorAll('.faq-item').forEach(function(item){
     var q = item.querySelector('.faq-q');
     var a = item.querySelector('.faq-a');
@@ -172,7 +162,6 @@
     });
   });
 
-  /* ---------- contact form (Formspree AJAX) ---------- */
   var form = document.getElementById('contact-form');
   if(form){
     var status = document.getElementById('form-status');
