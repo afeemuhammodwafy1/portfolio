@@ -40,6 +40,7 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
+  width:100%;
 }
 
 body::before{
@@ -59,12 +60,12 @@ body::before{
   body::before{ height:70vh; max-height:560px; }
 }
 
-img{ max-width:100%; display:block; }
+img{ max-width:100%; height:auto; display:block; }
 a{ color:inherit; text-decoration:none; }
 button{ font-family:inherit; }
 ::selection{ background:var(--accent-glow); color:var(--accent); }
 
-.container{ max-width:var(--max); margin:0 auto; padding:0 24px; position:relative; z-index:1; }
+.container{ max-width:var(--max); margin:0 auto; padding:0 24px; position:relative; z-index:1; width:100%; }
 
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
   outline:2px solid var(--accent); outline-offset:3px; border-radius:4px;
@@ -104,7 +105,7 @@ h1,h2,h3{ font-family:var(--display); font-weight:600; letter-spacing:-.01em; ma
 }
 .btn svg{ width:16px; height:16px; }
 
-/* Fixed High-Contrast Primary Button */
+/* Primary Button */
 .btn-primary{ 
   background: var(--accent); 
   color: #0a0d12 !important; 
@@ -299,7 +300,7 @@ h1,h2,h3{ font-family:var(--display); font-weight:600; letter-spacing:-.01em; ma
   }
 }
 
-/* Hero */
+/* Hero Section */
 .hero{
   min-height: 100vh;
   min-height: 100svh;
@@ -727,7 +728,7 @@ textarea{ resize:vertical; min-height:130px; }
 .visually-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
 
 /* ============================================================
-   Wafy Lab Style Case Study Layout & Grid
+   Case Study Layout & Grid (Desktop Baseline)
    ============================================================ */
 .cs-page {
   padding-top: 100px;
@@ -815,7 +816,7 @@ textarea{ resize:vertical; min-height:130px; }
   display: block;
 }
 
-/* 2-Column Grid Layout */
+/* 2-Column Desktop Grid */
 .cs-main-grid {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -823,7 +824,6 @@ textarea{ resize:vertical; min-height:130px; }
   align-items: start;
 }
 
-/* Left Sidebar Sticky */
 .cs-sidebar {
   position: sticky;
   top: 100px;
@@ -860,11 +860,11 @@ textarea{ resize:vertical; min-height:130px; }
   color: var(--accent);
 }
 
-/* Right Content Area */
 .cs-content-body {
   display: flex;
   flex-direction: column;
   gap: 60px;
+  min-width: 0;
 }
 
 .cs-section {
@@ -895,7 +895,6 @@ textarea{ resize:vertical; min-height:130px; }
   color: var(--text);
 }
 
-/* Mini Feature Cards Grid */
 .cs-feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -922,7 +921,6 @@ textarea{ resize:vertical; min-height:130px; }
   line-height: 1.5;
 }
 
-/* Terminal / Code Box */
 .cs-terminal {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -936,7 +934,6 @@ textarea{ resize:vertical; min-height:130px; }
   margin: 20px 0;
 }
 
-/* Bullet Points List */
 .cs-list {
   margin: 0 0 20px 20px;
   padding: 0;
@@ -950,12 +947,91 @@ textarea{ resize:vertical; min-height:130px; }
   color: var(--text);
 }
 
+/* ============================================================
+   Case Study Mobile Responsive Fix (Zero Horizontal Scroll)
+   ============================================================ */
 @media (max-width: 900px) {
+  .cs-page {
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
+
+  .cs-title {
+    font-size: clamp(1.85rem, 8vw, 2.4rem);
+    word-break: break-word;
+  }
+
+  .cs-lead {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .cs-meta-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 14px 0;
+  }
+
+  .cs-meta-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .cs-meta-bar .project-links {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .cs-meta-bar .project-links .btn {
+    flex: 1 1 0;
+    padding: 10px 8px;
+    font-size: 0.8rem;
+    justify-content: center;
+  }
+
+  .cs-hero-preview {
+    margin-bottom: 36px;
+    padding: 6px;
+  }
+
   .cs-main-grid {
-    grid-template-columns: 1fr;
+    display: block;
+    width: 100%;
+  }
+
+  .cs-sidebar {
+    display: none !important;
+  }
+
+  .cs-content-body {
+    width: 100%;
     gap: 40px;
   }
-  .cs-sidebar {
-    display: none;
+
+  .cs-sec-heading {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  .cs-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cs-terminal {
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.75rem;
+    padding: 12px 14px;
+  }
+
+  .cs-list {
+    margin-left: 16px;
+    padding-left: 0;
   }
 }
