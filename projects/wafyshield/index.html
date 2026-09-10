@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WafyShield — Case Study | Afee Muhammod Wafy</title>
+<meta name="description" content="Architecture case study of WafyShield: A serverless web security audit scanner by Afee Muhammod Wafy.">
+<link rel="canonical" href="https://afeemuhammodwafy.com/projects/wafyshield/">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2318181b'/><path d='M25 35 L45 50 L25 65' stroke='%2310b981' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' fill='none'/><line x1='55' y1='65' x2='75' y2='65' stroke='%23ffffff' stroke-width='9' stroke-linecap='round'/></svg>">
+<link rel="apple-touch-icon" href="../../icon.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<a href="#main" class="visually-hidden">Skip to content</a>
+
+<nav class="nav" aria-label="Primary">
+  <div class="container">
+    <a href="../../" class="brand"><span class="dot"></span>WAFY</a>
+    
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#skills">Skills</a></li>
+      <li><a href="../">Projects</a></li>
+      <li><a href="../../#experience">Experience</a></li>
+      <li><a href="../../#education">Education</a></li>
+      <li><a href="../../#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="../" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        All Projects
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="main" class="cs-page">
+  <div class="container">
+    
+    <!-- Top Return Link -->
+    <a href="../" class="cs-top-back">
+      ← BACK TO BUILDS
+    </a>
+
+    <!-- Title & Meta Header -->
+    <div class="cs-badge-row">SECURITY ARCHITECTURE // BUILD 04</div>
+    <h1 class="cs-title">WafyShield</h1>
+    <p class="cs-lead">A serverless, non-intrusive web security audit scanner engineering real-time perimeter checks, OWASP compliance scoring, and zero-persistence runtime isolation.</p>
+
+    <!-- Meta Info Bar with Action Buttons -->
+    <div class="cs-meta-bar">
+      <div class="cs-meta-info">
+        <div>STACK: <span>Next.js / Node TLS</span></div>
+        <div>FOCUS: <span>Web Security / OWASP</span></div>
+      </div>
+      <div class="project-links">
+        <a href="https://shield.amwafy.xyz/" target="_blank" rel="noopener" class="btn btn-primary">
+          Live Scanner
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="https://github.com/afeemuhammodwafy1/wafyshield" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.25 5.68.42.36.78 1.08.78 2.18v3.23c0 .3.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
+          Source Code
+        </a>
+      </div>
+    </div>
+
+    <!-- Big Hero Screenshot Showcase -->
+    <div class="cs-hero-preview">
+      <img src="../../assets/images/wafyshield.webp" alt="WafyShield Security Scanner Preview">
+    </div>
+
+    <!-- Main 2-Column Content Grid -->
+    <div class="cs-main-grid">
+      
+      <!-- Sticky Sidebar -->
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-title">ON THIS PAGE</div>
+        <ul class="cs-nav-list">
+          <li><a href="#concept">Concept &amp; Motivation</a></li>
+          <li><a href="#network">Network Defense</a></li>
+          <li><a href="#architecture">Multi-Vector Engine</a></li>
+          <li><a href="#algorithm">Weighted Scoring</a></li>
+          <li><a href="#challenges">Challenges &amp; Insights</a></li>
+        </ul>
+
+        <div class="cs-sidebar-title">ENGINEERING SPECS</div>
+        <div style="font-family:var(--mono); font-size:0.75rem; color:var(--text-faint); line-height: 1.8;">
+          RUNTIME: Edge / Serverless<br>
+          PROTOCOL: HTTP/1.1 &amp; HTTP/2<br>
+          SECURITY: SSRF Shielded<br>
+          STORAGE: 100% Client-side
+        </div>
+      </aside>
+
+      <!-- Content Column -->
+      <div class="cs-content-body">
+
+        <!-- 01 Section -->
+        <section id="concept" class="cs-section">
+          <span class="cs-sec-num">01 / CONCEPT &amp; MOTIVATION</span>
+          <h2 class="cs-sec-heading">The Problem: Heavy, Opaque Security Scanners</h2>
+          <p>Most commercial web security audit tools are built behind enterprise firewalls, require software installations, or persist targets into marketing databases. Developers and webmasters want to test their site’s security posture quickly without setup overhead — especially for testing staging environments or personal web projects.</p>
+          <p><strong>WafyShield</strong> was designed to fill this gap: a lightweight, serverless reconnaissance scanner that checks critical external web signals in real-time, completely client-isolated, and provides clear remediation instructions with zero data persistence.</p>
+        </section>
+
+        <!-- 02 Section -->
+        <section id="network" class="cs-section">
+          <span class="cs-sec-num">02 / NETWORK DEFENSE</span>
+          <h2 class="cs-sec-heading">SSRF Prevention and Request Isolation</h2>
+          <p>Allowing a user to submit arbitrary URLs to a serverless node introduces severe risk of Server-Side Request Forgery (SSRF). Attackers frequently attempt to sweep local subnets or scrape internal cloud metadata environments (e.g., AWS IMDS endpoints).</p>
+          
+          <div class="cs-feature-grid">
+            <div class="cs-feature-card">
+              <h4>IP Range Filtering</h4>
+              <p>Strict regex patterns block all private RFC 1918 space (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) and link-local ranges.</p>
+            </div>
+            <div class="cs-feature-card">
+              <h4>Edge Rate Limiting</h4>
+              <p>Protects serverless endpoints from abuse through token buckets calculated in real-time per client IP subnet.</p>
+            </div>
+            <div class="cs-feature-card">
+              <h4>Strict Abort Timeouts</h4>
+              <p>Guards with an engineered 5-second hard ceiling per fetch to prevent slow-loris connection hangs on audit endpoints.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 Section -->
+        <section id="architecture" class="cs-section">
+          <span class="cs-sec-num">03 / SYSTEM ARCHITECTURE</span>
+          <h2 class="cs-sec-heading">Multi-Vector Inspection Engine</h2>
+          <p>When an audit is triggered, WafyShield parallelizes multiple lightweight inspection threads without heavy browser automation:</p>
+          <ul class="cs-list">
+            <li><strong>TLS Certificate Analysis:</strong> Initiates an isolated SNI-handshake via <code>tls.connect()</code> on port 443 to inspect the peer certificate chain, validity window, issuer authority, and cipher suite strength.</li>
+            <li><strong>OWASP Security Headers:</strong> Assesses compliance based on HTTP response headers: HSTS (max-age, includeSubDomains), Content-Security-Policy (script-src, frame-ancestors), X-Frame-Options, and Referrer-Policy.</li>
+            <li><strong>Cookie Hygiene Auditing:</strong> Inspects all <code>Set-Cookie</code> directives for mandatory security flags including <code>Secure</code>, <code>HttpOnly</code>, and <code>SameSite</code> to eliminate session hijacking and CSRF vectors.</li>
+          </ul>
+        </section>
+
+        <!-- 04 Section -->
+        <section id="algorithm" class="cs-section">
+          <span class="cs-sec-num">04 / ALGORITHM DESIGN</span>
+          <h2 class="cs-sec-heading">Weighted Scoring &amp; Zero-Persistence Storage</h2>
+          <p>Each security check contributes to an aggregate security score (0–100). Penalties are proportional to vulnerability severity:</p>
+
+          <div class="cs-terminal">
+HSTS Enforcement: 20 pts | HTTPS / Valid SSL: 20 pts | CSP Presence: 20 pts
+X-Frame-Options: 10 pts | Cookie Security: 15 pts | Information Leakage: 15 pts
+--------------------------------------------------------------------------------
+Calculated Range: 0 to 100 Index (Grades: A+, A, B, C, F)
+          </div>
+
+          <p>To preserve user privacy, no target domains or audit summaries are written to disk or a database. State is maintained solely in the user's browser via <code>localStorage</code>, giving the client total control over audit history.</p>
+        </section>
+
+        <!-- 05 Section -->
+        <section id="challenges" class="cs-section">
+          <span class="cs-sec-num">05 / RETROSPECTIVE</span>
+          <h2 class="cs-sec-heading">Technical Challenges &amp; Insights</h2>
+          <p>Handling multi-hop HTTP redirect chains proved intricate: tracking status codes across 301, 302, and 307 hops was essential to confirm whether HSTS and HTTPS enforcement actually protected the target domain or leaked information over cleartext transitions.</p>
+          <p>The resulting architecture provides an instantaneous, transparent security audit utility with zero database cost and complete data privacy.</p>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Afee Muhammod Wafy — Bangladesh.</span>
+      <a href="../">Back to Projects</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WafyURL — Case Study | Afee Muhammod Wafy</title>
+<meta name="description" content="Architecture case study of WafyURL: A high-performance URL shortening and link telemetry system by Afee Muhammod Wafy.">
+<link rel="canonical" href="https://afeemuhammodwafy.com/projects/wafyurl/">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2318181b'/><path d='M25 35 L45 50 L25 65' stroke='%2310b981' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' fill='none'/><line x1='55' y1='65' x2='75' y2='65' stroke='%23ffffff' stroke-width='9' stroke-linecap='round'/></svg>">
+<link rel="apple-touch-icon" href="../../icon.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<a href="#main" class="visually-hidden">Skip to content</a>
+
+<nav class="nav" aria-label="Primary">
+  <div class="container">
+    <a href="../../" class="brand"><span class="dot"></span>WAFY</a>
+    
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#skills">Skills</a></li>
+      <li><a href="../">Projects</a></li>
+      <li><a href="../../#experience">Experience</a></li>
+      <li><a href="../../#education">Education</a></li>
+      <li><a href="../../#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="../" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        All Projects
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="main" class="cs-page">
+  <div class="container">
+    
+    <a href="../" class="cs-top-back">
+      ← BACK TO BUILDS
+    </a>
+
+    <div class="cs-badge-row">DISTRIBUTED INFRASTRUCTURE // BUILD 03</div>
+    <h1 class="cs-title">WafyURL</h1>
+    <p class="cs-lead">A high-performance URL shortening and telemetry engine engineered for low-latency redirection, cryptographic link protection, and detailed visitor analytics.</p>
+
+    <div class="cs-meta-bar">
+      <div class="cs-meta-info">
+        <div>STACK: <span>Python / Flask / PostgreSQL</span></div>
+        <div>FOCUS: <span>Low-Latency Routing / Telemetry</span></div>
+      </div>
+      <div class="project-links">
+        <a href="https://url.amwafy.xyz/" target="_blank" rel="noopener" class="btn btn-primary">
+          Live Service
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="https://github.com/afeemuhammodwafy1/wafyurl" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.25 5.68.42.36.78 1.08.78 2.18v3.23c0 .3.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
+          Source Code
+        </a>
+      </div>
+    </div>
+
+    <div class="cs-hero-preview">
+      <img src="../../assets/images/wafyurl.webp" alt="WafyURL Interface and Dashboard Preview">
+    </div>
+
+    <div class="cs-main-grid">
+      
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-title">ON THIS PAGE</div>
+        <ul class="cs-nav-list">
+          <li><a href="#motivation">The Problem</a></li>
+          <li><a href="#architecture">Core Architecture</a></li>
+          <li><a href="#telemetry">Analytics Pipeline</a></li>
+          <li><a href="#security">Cryptographic Shielding</a></li>
+          <li><a href="#optimization">Database &amp; Scaling</a></li>
+        </ul>
+
+        <div class="cs-sidebar-title">ENGINEERING SPECS</div>
+        <div style="font-family:var(--mono); font-size:0.75rem; color:var(--text-faint); line-height: 1.8;">
+          BACKEND: Flask / WSGI<br>
+          DATABASE: PostgreSQL + SQLAlchemy<br>
+          LATENCY: Sub-35ms Lookup<br>
+          ENCRYPTION: SHA-256 Digest
+        </div>
+      </aside>
+
+      <div class="cs-content-body">
+
+        <section id="motivation" class="cs-section">
+          <span class="cs-sec-num">01 / CONCEPT &amp; MOTIVATION</span>
+          <h2 class="cs-sec-heading">The Problem: Paywalled Link Telemetry</h2>
+          <p>Commercial link shorteners regularly lock essential features—custom aliases, deep analytics, and password protection—behind recurring subscriptions while aggressively tracking end-users across domains.</p>
+          <p><strong>WafyURL</strong> provides a transparent, zero-cost, privacy-first link infrastructure. It handles high-throughput HTTP 302 redirects with instant QR code rendering, customizable link slugs, and isolated per-link clickstream analytics.</p>
+        </section>
+
+        <section id="architecture" class="cs-section">
+          <span class="cs-sec-num">02 / CORE ARCHITECTURE</span>
+          <h2 class="cs-sec-heading">High-Throughput Redirect Pipeline</h2>
+          <p>The routing pipeline separates read paths from asynchronous metric recording. When a shortened URL slug is requested, the system resolves destination pointers instantly:</p>
+          
+          <div class="cs-feature-grid">
+            <div class="cs-feature-card">
+              <h4>Trailing-Plus Direct Access</h4>
+              <p>Appending <code>+</code> directly to any short slug interrupts redirection and renders real-time telemetry charts instantly.</p>
+            </div>
+            <div class="cs-feature-card">
+              <h4>Collision-Free Base62 Hashes</h4>
+              <p>Generates compact base62 tokens derived from incremental records, ensuring collision resistance under high loads.</p>
+            </div>
+            <div class="cs-feature-card">
+              <h4>Instant Dynamic QR</h4>
+              <p>Generates lightweight vector SVG QR matrices on-the-fly without relying on third-party tracking APIs.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="telemetry" class="cs-section">
+          <span class="cs-sec-num">03 / TELEMETRY PIPELINE</span>
+          <h2 class="cs-sec-heading">Privacy-Preserving Clickstream Analytics</h2>
+          <p>Redirect events trigger non-blocking metadata logging to collect essential telemetry without storing personally identifiable information (PII):</p>
+          <ul class="cs-list">
+            <li><strong>User-Agent Classification:</strong> Parses client browser, OS distribution, and device viewport categories via lightweight regex rules.</li>
+            <li><strong>Referral Trace Isolation:</strong> Records traffic origins (Direct, Search Engines, Social Networks) while scrubbing sensitive query strings.</li>
+            <li><strong>Coarse Geo-IP Resolution:</strong> Resolves countries via localized binary IP tables without recording raw IP addresses.</li>
+          </ul>
+        </section>
+
+        <section id="security" class="cs-section">
+          <span class="cs-sec-num">04 / ACCESS CONTROL</span>
+          <h2 class="cs-sec-heading">Cryptographic Link Shielding</h2>
+          <p>For sensitive or restricted internal links, WafyURL provides gated redirection channels that enforce authentication prior to forwarding:</p>
+
+          <div class="cs-terminal">
+Input Password  --> Salted SHA-256 Digest  --> Constant-Time Compare
+Auth Passed?    --> HTTP 302 Redirect      --> Target Destination
+Auth Failed?    --> HTTP 401 Unauthorized  --> Incremental Rate Limiting
+          </div>
+
+          <p>Brute-force protection uses IP-based rate limiting on password submission endpoints, safeguarding gated links against automated dictionary attacks.</p>
+        </section>
+
+        <section id="optimization" class="cs-section">
+          <span class="cs-sec-num">05 / RETROSPECTIVE</span>
+          <h2 class="cs-sec-heading">Database Optimization &amp; Lessons</h2>
+          <p>Handling spikes in link redirections while simultaneously logging analytics writes posed a classic database bottleneck. Adopting B-Tree composite indexes on <code>(slug, is_active)</code> reduced read queries to single-digit milliseconds, while connection pooling maintained stability under load.</p>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Afee Muhammod Wafy — Bangladesh.</span>
+      <a href="../">Back to Projects</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../script.js"></script>
+</body>
+</html>
