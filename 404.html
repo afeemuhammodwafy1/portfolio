@@ -9,11 +9,9 @@
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://afeemuhammodwafy.com/">
 
-<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2318181b'/><path d='M25 35 L45 50 L25 65' stroke='%2310b981' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' fill='none'/><line x1='55' y1='65' x2='75' y2='65' stroke='%23ffffff' stroke-width='9' stroke-linecap='round'/></svg>">
 <link rel="apple-touch-icon" href="./icon.webp">
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N39EDFLMGM"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -22,7 +20,6 @@
   gtag('config', 'G-N39EDFLMGM');
 </script>
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Afee Muhammod Wafy">
 <meta property="og:title" content="404 — Page Not Found | Afee Muhammod Wafy">
@@ -31,7 +28,6 @@
 <meta property="og:image" content="https://afeemuhammodwafy.com/image-og.png">
 <meta property="og:locale" content="en_US">
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@muhammodwafy">
 <meta name="twitter:title" content="404 — Page Not Found | Afee Muhammod Wafy">
@@ -40,40 +36,322 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
-<link rel="preload" href="./style.css" as="style">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="./style.css">
+<style>
+/* ============================================================
+   404 — Self-contained styles
+   ============================================================ */
+:root{
+  --bg:#090a0f;--surface:#11141c;--line:#252a36;--line-soft:#1a1e27;
+  --text:#f2f3f0;--muted:#9a9da8;--muted-2:#626672;
+  --accent:#b8ff5a;--cyan:#79f2ff;
+  --display:"Space Grotesk",system-ui,sans-serif;--sans:"DM Sans",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --max:1160px;--ease:cubic-bezier(.19,1,.22,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(circle at 70% 0%,rgba(121,242,255,.045),transparent 28%),radial-gradient(circle at 10% 30%,rgba(184,255,90,.035),transparent 25%)}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+::selection{background:rgba(184,255,90,.25);color:#fff}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.section-shell{width:min(calc(100% - 48px),var(--max));margin-inline:auto;position:relative}
+.noise{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+.spotlight{position:fixed;width:420px;height:420px;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(184,255,90,.055),transparent 65%);mix-blend-mode:screen}
 
+/* Header */
+.site-header{position:fixed;z-index:100;top:18px;left:50%;transform:translateX(-50%);width:min(calc(100% - 40px),1120px);height:62px;padding:0 10px 0 20px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:30px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:rgba(9,10,15,.66);backdrop-filter:blur(18px);transition:.35s var(--ease)}
+.site-header.is-scrolled{top:10px;background:rgba(9,10,15,.9);border-color:var(--line)}
+.brand{display:flex;align-items:center;font-family:var(--display);font-weight:700;letter-spacing:.08em;font-size:15px;color:var(--text)}
+.desktop-nav{display:flex;justify-content:center;gap:24px}
+.desktop-nav a,.nav-cta{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--muted);transition:.2s}
+.desktop-nav a:hover,.nav-cta:hover{color:var(--text)}
+.nav-cta{justify-self:end;display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border:1px solid var(--line);border-radius:11px}
+.nav-cta svg{width:14px;height:14px}
+.menu-btn{display:none;background:transparent;border:0;width:42px;height:42px;padding:0}
+.menu-btn span{display:block;width:20px;height:1px;background:var(--text);margin:6px auto;transition:.25s}
+.mobile-menu{display:none}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 18px;border:1px solid var(--line);border-radius:12px;font-size:12px;font-weight:800;letter-spacing:.03em;transition:transform .25s var(--ease),border-color .25s,background .25s,color .25s;cursor:pointer}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:var(--accent);color:#090a0f;border-color:var(--accent)}
+.btn-primary:hover{background:#c8ff7b}
+.btn-ghost{background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:rgba(184,255,90,.35);color:var(--accent)}
+
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(184,255,90,.08),0 0 15px rgba(184,255,90,.5);animation:pulse 2.2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(184,255,90,0),0 0 20px rgba(184,255,90,.55)}}
+
+/* Error page — tighter top padding so "404" doesn't clip */
+.error-page{flex:1;display:grid;place-items:center;padding:120px 24px 80px;text-align:center;position:relative;z-index:1}
+.error-wrap{max-width:620px;margin-inline:auto}
+.error-code{font-family:var(--display);font-size:clamp(96px,20vw,200px);line-height:.9;letter-spacing:-.07em;font-weight:700;margin:0 0 8px;background:linear-gradient(140deg,#ffffff 20%,#5f626c 90%);-webkit-background-clip:text;background-clip:text;color:transparent;position:relative;display:inline-block}
+.error-code .glitch{color:var(--accent);background:none;-webkit-text-fill-color:var(--accent);display:inline-block;animation:glitch 3.2s infinite}
+@keyframes glitch{0%,92%,100%{transform:translate(0,0)}93%{transform:translate(-3px,2px)}94%{transform:translate(3px,-2px)}95%{transform:translate(-2px,1px)}96%{transform:translate(2px,-1px)}}
+.error-page .eyebrow{justify-content:center;margin:0 auto 22px}
+.error-page h1{font-family:var(--display);font-size:clamp(28px,4.4vw,44px);letter-spacing:-.045em;line-height:1.08;margin:0 0 16px}
+.error-page p{color:var(--muted);font-size:16px;line-height:1.7;max-width:48ch;margin:0 auto 34px}
+.error-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.error-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+.error-orb.a{width:420px;height:420px;top:8%;right:-160px;border:1px solid rgba(184,255,90,.07);box-shadow:inset 0 0 100px rgba(184,255,90,.02)}
+.error-orb.b{width:620px;height:620px;bottom:-220px;left:-240px;border:1px solid rgba(121,242,255,.05)}
+
+/* Footer */
+.footer{min-height:150px;padding:38px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;color:var(--muted);font-size:12px;flex-wrap:wrap;position:relative;z-index:1}
+.footer-right{display:flex;gap:28px;align-items:center}
+.footer-right p{margin:0}
+.footer-right a:hover{color:var(--text)}
+
+/* Cursor */
+.cursor-dot,.cursor-ring{position:fixed;left:0;top:0;pointer-events:none;transform:translate(-50%,-50%);border-radius:50%;z-index:10000}
+.cursor-dot{width:5px;height:5px;background:var(--accent)}
+.cursor-ring{width:32px;height:32px;border:1px solid rgba(184,255,90,.5);transition:width .15s,height .15s,opacity .15s}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal.in-view{opacity:1;transform:none}
+
+/* to-top */
+.to-top{position:fixed;right:24px;bottom:24px;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:rgba(9,10,15,.86);color:var(--accent);opacity:0;pointer-events:none;transform:translateY(10px);transition:.25s;z-index:90}
+.to-top.is-visible{opacity:1;pointer-events:auto;transform:none}
+
+/* Mobile */
+@media(max-width:900px){
+  .site-header{grid-template-columns:auto 1fr auto}
+  .desktop-nav,.site-header>.nav-cta{display:none}
+  .menu-btn{display:block;justify-self:end}
+  .mobile-menu{position:fixed;display:flex;z-index:99;top:86px;left:16px;right:16px;flex-direction:column;padding:10px;border:1px solid var(--line);border-radius:18px;background:rgba(9,10,15,.96);backdrop-filter:blur(18px);opacity:0;transform:translateY(-10px);pointer-events:none;transition:.25s;max-height:calc(100vh - 120px);overflow-y:auto}
+  .mobile-menu.open{opacity:1;transform:none;pointer-events:auto}
+  .mobile-menu a{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:12px;color:var(--muted);font-weight:700;font-size:14px;transition:background .2s,color .2s}
+  .mobile-menu a:hover,.mobile-menu a:active{background:rgba(255,255,255,.035);color:var(--text)}
+  .mobile-menu a svg{width:18px;height:18px;flex-shrink:0;color:var(--accent);opacity:.9}
+  .mobile-menu a.resume-link{margin-top:6px;padding-top:18px;border-top:1px solid var(--line-soft);border-radius:0;color:var(--text)}
+  .mobile-menu a.resume-link svg{color:var(--cyan)}
+  .site-header{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .site-header.is-scrolled{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  .error-page{padding:110px 24px 70px}
+}
+@media(max-width:600px){
+  .section-shell{width:min(calc(100% - 28px),var(--max))}
+  .site-header{top:12px;width:calc(100% - 24px);height:52px;padding:0 8px 0 14px;border-radius:14px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .site-header.is-scrolled{top:8px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .brand{font-size:13px;letter-spacing:.1em}
+  .menu-btn{width:38px;height:38px}
+  .menu-btn span{width:18px}
+  .mobile-menu{top:72px}
+  .error-page{padding:100px 20px 60px}
+  .error-actions .btn{flex:1 1 auto;justify-content:center}
+  .footer{align-items:flex-start;flex-direction:column;padding:40px 0}
+  .footer-right{width:100%;justify-content:space-between}
+  .cursor-dot,.cursor-ring{display:none}
+  .spotlight{display:none}
+  .noise{display:none}
+  body::before{background:radial-gradient(circle at 60% 0%,rgba(121,242,255,.05),transparent 40%),radial-gradient(circle at 15% 25%,rgba(184,255,90,.04),transparent 35%)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
+<div class="noise" aria-hidden="true"></div>
+<div class="spotlight" aria-hidden="true"></div>
 
-<nav class="nav is-scrolled" aria-label="Primary">
-  <div class="container">
-    <a href="./" class="brand"><span class="dot"></span>WAFY</a>
-  </div>
-</nav>
+<a href="#main" class="visually-hidden">Skip to content</a>
 
-<main class="error-page">
-  <div>
+<header class="site-header">
+  <a class="brand" href="./" aria-label="Afee Muhammod Wafy home">WAFY</a>
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    <a href="./#about">About</a>
+    <a href="./#skills">Skills</a>
+    <a href="./projects/">Projects</a>
+    <a href="./#experience">Experience</a>
+    <a href="./#education">Education</a>
+    <a href="./#contact">Contact</a>
+  </nav>
+  <a class="nav-cta" href="./Resume.pdf" target="_blank" rel="noopener">
+    Resume
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+  </a>
+  <button class="menu-btn" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="nav-links" aria-hidden="true">
+  <a href="./#about">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    About
+  </a>
+  <a href="./#skills">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    Skills
+  </a>
+  <a href="./projects/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+    Projects
+  </a>
+  <a href="./#experience">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+    Experience
+  </a>
+  <a href="./#education">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    Education
+  </a>
+  <a href="./#contact">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    Contact
+  </a>
+  <a href="./Resume.pdf" target="_blank" rel="noopener" class="resume-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Resume
+  </a>
+</div>
+
+<main id="main" class="error-page">
+  <div class="error-orb a" aria-hidden="true"></div>
+  <div class="error-orb b" aria-hidden="true"></div>
+
+  <div class="error-wrap reveal">
     <div class="error-code">4<span class="glitch">0</span>4</div>
-    <span class="eyebrow" style="justify-content:center; display:flex;">error</span>
-    <h1>This route doesn't exist</h1>
-    <p>The page you're looking for was moved, renamed, or never built. Let's get you back to something that resolves.</p>
+    <div class="eyebrow"><span class="pulse-dot"></span>Route Not Found</div>
+    <h1>This page doesn't exist.</h1>
+    <p>The route you tried was moved, renamed, or was never built. Let's get you back to something that resolves.</p>
     <div class="error-actions">
-      <a href="./" class="btn btn-primary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        Back to Home
-      </a>
-      <a href="./projects/" class="btn btn-ghost">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-        View Projects
-      </a>
+      <a href="./" class="btn btn-primary">Back to Home <span>↗</span></a>
+      <a href="./projects/" class="btn btn-ghost">View Projects <span>→</span></a>
     </div>
   </div>
 </main>
 
-<script src="./script.js"></script>
+<footer class="footer section-shell">
+  <div class="footer-right">
+    <p>© <span id="year"></span> Afee Muhammod Wafy — Bangladesh.</p>
+    <a href="#main" aria-label="Back to top">↑</a>
+  </div>
+</footer>
+
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<button class="to-top" aria-label="Back to top">↑</button>
+
+<script>
+/* ============================================================
+   404 — Self-contained script
+   ============================================================ */
+(function(){
+  'use strict';
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var y = document.getElementById('year');
+  if(y) y.textContent = new Date().getFullYear();
+
+  var header = document.querySelector('.site-header');
+  var toTop = document.querySelector('.to-top');
+  function onScroll(){
+    if(header) header.classList.toggle('is-scrolled', window.scrollY > 12);
+    if(toTop) toTop.classList.toggle('is-visible', window.scrollY > 500);
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  if(toTop){
+    toTop.addEventListener('click', function(){
+      window.scrollTo({ top:0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  }
+
+  var menuBtn = document.getElementById('nav-toggle');
+  var mobile = document.getElementById('nav-links');
+  function closeMenu(){
+    if(!menuBtn || !mobile) return;
+    menuBtn.classList.remove('active');
+    menuBtn.setAttribute('aria-expanded','false');
+    mobile.classList.remove('open');
+    mobile.setAttribute('aria-hidden','true');
+  }
+  if(menuBtn && mobile){
+    menuBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = mobile.classList.toggle('open');
+      menuBtn.classList.toggle('active', open);
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mobile.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+    mobile.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('click', function(e){
+      if(!mobile.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
+    });
+  }
+
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:.12, rootMargin:'0px 0px -35px 0px' });
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  var dot = document.querySelector('.cursor-dot');
+  var ring = document.querySelector('.cursor-ring');
+  var spot = document.querySelector('.spotlight');
+  var mx = window.innerWidth / 2;
+  var my = window.innerHeight / 2;
+  var rx = mx, ry = my;
+  var isFinePointer = window.matchMedia('(pointer:fine)').matches;
+  var isMobile = window.matchMedia('(max-width:600px)').matches;
+
+  if(!reduceMotion && isFinePointer && !isMobile && (dot || ring || spot)){
+    window.addEventListener('mousemove', function(e){
+      mx = e.clientX; my = e.clientY;
+      if(dot){ dot.style.left = mx + 'px'; dot.style.top = my + 'px'; }
+      if(spot){ spot.style.left = mx + 'px'; spot.style.top = my + 'px'; }
+    }, { passive:true });
+
+    function cursorLoop(){
+      rx += (mx - rx) * .14;
+      ry += (my - ry) * .14;
+      if(ring){ ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; }
+      requestAnimationFrame(cursorLoop);
+    }
+    if(ring) cursorLoop();
+  } else {
+    if(dot) dot.style.display = 'none';
+    if(ring) ring.style.display = 'none';
+  }
+
+  if(ring){
+    document.querySelectorAll('a,button').forEach(function(el){
+      el.addEventListener('mouseenter', function(){
+        ring.style.width = '46px';
+        ring.style.height = '46px';
+        ring.style.opacity = '.7';
+      });
+      el.addEventListener('mouseleave', function(){
+        ring.style.width = '32px';
+        ring.style.height = '32px';
+        ring.style.opacity = '1';
+      });
+    });
+  }
+
+})();
+</script>
+
 </body>
 </html>
