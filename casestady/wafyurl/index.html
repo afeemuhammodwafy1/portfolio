@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090a0f">
+<title>WafyURL — Case Study | Afee Muhammod Wafy</title>
+<meta name="description" content="Architecture case study of WafyURL: A high-performance URL shortening and link telemetry system by Afee Muhammod Wafy.">
+<meta name="author" content="Afee Muhammod Wafy">
+<link rel="canonical" href="https://afeemuhammodwafy.com/casestady/wafyurl/">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2318181b'/><path d='M25 35 L45 50 L25 65' stroke='%2310b981' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' fill='none'/><line x1='55' y1='65' x2='75' y2='65' stroke='%23ffffff' stroke-width='9' stroke-linecap='round'/></svg>">
+<link rel="apple-touch-icon" href="../../icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
+<link rel="preload" href="../../style.css" as="style">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="noise" aria-hidden="true"></div>
+<div class="spotlight" aria-hidden="true"></div>
+
+<a href="#main" class="visually-hidden">Skip to content</a>
+
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="Afee Muhammod Wafy home">WAFY</a>
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    <a href="../../#about">About</a>
+    <a href="../../#skills">Skills</a>
+    <a href="../">Projects</a>
+    <a href="../../#experience">Experience</a>
+    <a href="../../#education">Education</a>
+    <a href="../../#contact">Contact</a>
+  </nav>
+  <a class="nav-cta" href="../../Resume.pdf" target="_blank" rel="noopener">
+    Resume
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+  </a>
+  <button class="menu-btn" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="nav-links" aria-hidden="true">
+  <a href="../../#about">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    About
+  </a>
+  <a href="../../#skills">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    Skills
+  </a>
+  <a href="../../projects/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+    Projects
+  </a>
+  <a href="../../#experience">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+    Experience
+  </a>
+  <a href="../../#education">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    Education
+  </a>
+  <a href="../../#contact">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    Contact
+  </a>
+  <a href="../../Resume.pdf" target="_blank" rel="noopener" class="resume-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Resume
+  </a>
+</div>
+
+<main id="main" class="cs-page">
+  <div class="section-shell">
+
+    <a href="../../projects/" class="cs-top-back">← Back to Builds</a>
+
+    <div class="cs-badge-row">Distributed Infrastructure</div>
+    <h1 class="cs-title">WafyURL</h1>
+    <p class="cs-lead">A high-performance URL shortening and telemetry engine engineered for low-latency redirection, cryptographic link protection, and detailed visitor analytics.</p>
+
+    <div class="cs-meta-bar">
+      <div class="cs-meta-info">
+        <div>Stack: <span>Python / Flask / PostgreSQL</span></div>
+        <div>Focus: <span>Low-Latency Routing / Telemetry</span></div>
+      </div>
+      <div class="hero-actions" style="margin:0;">
+        <a href="https://url.amwafy.xyz/" target="_blank" rel="noopener" class="btn btn-primary">Live Service <span>↗</span></a>
+        <a href="https://github.com/afeemuhammodwafy1/wafyurl" target="_blank" rel="noopener" class="btn btn-ghost">Source Code <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="cs-hero-preview reveal">
+      <img src="../../assets/images/wafyurl.webp" alt="WafyURL Interface and Dashboard Preview">
+    </div>
+
+    <div class="cs-main-grid">
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-title">On This Page</div>
+        <ul class="cs-nav-list">
+          <li><a href="#motivation">The Problem</a></li>
+          <li><a href="#architecture">Core Architecture</a></li>
+          <li><a href="#telemetry">Analytics Pipeline</a></li>
+          <li><a href="#security">Cryptographic Shielding</a></li>
+          <li><a href="#optimization">Database &amp; Scaling</a></li>
+        </ul>
+
+        <div class="cs-sidebar-title">Engineering Specs</div>
+        <div class="cs-specs">
+          BACKEND: Flask / WSGI<br>
+          DATABASE: PostgreSQL + SQLAlchemy<br>
+          ROUTING: Indexed slug lookup<br>
+          PASSWORDS: Salted digest + constant-time compare
+        </div>
+      </aside>
+
+      <div class="cs-content-body">
+
+        <section id="motivation" class="cs-section reveal">
+          <span class="cs-sec-num">Concept &amp; Motivation</span>
+          <h2 class="cs-sec-heading">The Problem: Paywalled Link Telemetry</h2>
+          <p>Commercial link shorteners regularly lock essential features—custom aliases, deep analytics, and password protection—behind recurring subscriptions while aggressively tracking end-users across domains.</p>
+          <p><strong>WafyURL</strong> provides a privacy-focused URL shortening and analytics service. It handles HTTP 302 redirects, QR code rendering, customizable link slugs, and per-link clickstream analytics.</p>
+        </section>
+
+        <section id="architecture" class="cs-section reveal">
+          <span class="cs-sec-num">Core Architecture</span>
+          <h2 class="cs-sec-heading">High-Throughput Redirect Pipeline</h2>
+          <p>The routing pipeline separates read paths from asynchronous metric recording. When a shortened URL slug is requested, the system resolves destination pointers instantly:</p>
+
+          <div class="cs-feature-grid">
+            <div class="cs-feature-card">
+              <h4>Trailing-Plus Direct Access</h4>
+              <p>Appending <code>+</code> directly to any short slug interrupts redirection and renders real-time telemetry charts instantly.</p>
+            </div>
+            <div class="cs-feature-card">
+              <h4>Collision-Free Base62 Hashes</h4>
+              <p>Generates compact deterministic Base62 tokens from unique database records, avoiding token collisions for distinct IDs.</p>
+            </div>
+            <div class="cs-feature-card">
+              <h4>Instant Dynamic QR</h4>
+              <p>Generates lightweight vector SVG QR matrices on-the-fly without relying on third-party tracking APIs.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="telemetry" class="cs-section reveal">
+          <span class="cs-sec-num">Telemetry Pipeline</span>
+          <h2 class="cs-sec-heading">Privacy-Preserving Clickstream Analytics</h2>
+          <p>Redirect events trigger non-blocking metadata logging to collect essential telemetry without storing personally identifiable information (PII):</p>
+          <ul class="cs-list">
+            <li><strong>User-Agent Classification:</strong> Parses client browser, OS distribution, and device viewport categories via lightweight regex rules.</li>
+            <li><strong>Referral Trace Isolation:</strong> Records traffic origins (Direct, Search Engines, Social Networks) while scrubbing sensitive query strings.</li>
+            <li><strong>Coarse Geo-IP Resolution:</strong> Resolves countries via localized binary IP tables without recording raw IP addresses.</li>
+          </ul>
+        </section>
+
+        <section id="security" class="cs-section reveal">
+          <span class="cs-sec-num">Access Control</span>
+          <h2 class="cs-sec-heading">Cryptographic Link Shielding</h2>
+          <p>For sensitive or restricted internal links, WafyURL provides gated redirection channels that enforce authentication prior to forwarding:</p>
+
+          <div class="cs-terminal">Input Password  --> Salted SHA-256 Digest  --> Constant-Time Compare
+Auth Passed?    --> HTTP 302 Redirect      --> Target Destination
+Auth Failed?    --> HTTP 401 Unauthorized  --> Incremental Rate Limiting</div>
+
+          <p>Brute-force protection uses IP-based rate limiting on password submission endpoints, safeguarding gated links against automated dictionary attacks.</p>
+        </section>
+
+        <section id="optimization" class="cs-section reveal">
+          <span class="cs-sec-num">Retrospective</span>
+          <h2 class="cs-sec-heading">Database Optimization &amp; Lessons</h2>
+          <p>Handling spikes in link redirections while simultaneously logging analytics writes posed a classic database bottleneck. Adopting B-Tree composite indexes on <code>(slug, is_active)</code> reduced read queries to single-digit milliseconds, while connection pooling maintained stability under load.</p>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer-minimal section-shell">
+  <p>© <span id="year"></span> Afee Muhammod Wafy — Bangladesh.</p>
+  <a href="../">Back to Projects</a>
+</footer>
+
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<button class="to-top" aria-label="Back to top">↑</button>
+
+<script src="../../script.js"></script>
+
+</body>
+</html>
