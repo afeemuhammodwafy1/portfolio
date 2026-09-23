@@ -338,6 +338,14 @@ img{max-width:100%;height:auto;display:block}
 
 .cs-terminal{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px;font-family:var(--mono);font-size:12.5px;line-height:1.8;color:var(--accent);overflow-x:auto;margin:24px 0;white-space:pre-wrap;word-break:break-word}
 
+.cs-showcase{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
+.cs-showcase-card{margin:0;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));padding:8px;overflow:hidden;transition:transform .25s var(--ease),border-color .25s}
+.cs-showcase-card:hover{transform:translateY(-4px);border-color:rgba(184,255,90,.28)}
+.cs-showcase-card img{display:block;width:100%;height:auto;border-radius:12px;background:#fff}
+.cs-showcase-card figcaption{padding:12px 8px 7px;font-size:11px;line-height:1.45;color:var(--muted-2);letter-spacing:.03em}
+.cs-showcase-wide{margin-top:28px;border:1px solid var(--line);border-radius:22px;padding:10px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));overflow:hidden}
+.cs-showcase-wide img{display:block;width:100%;border-radius:16px}
+
 .cs-list{list-style:none;padding:0;margin:0 0 22px}
 .cs-list li{color:var(--muted);font-size:14px;line-height:1.7;padding:14px 0 14px 26px;border-bottom:1px solid var(--line-soft);position:relative}
 .cs-list li::before{content:"✦";position:absolute;left:0;top:14px;color:var(--accent);font-size:11px}
@@ -490,6 +498,7 @@ img{max-width:100%;height:auto;display:block}
   .cs-lead{font-size:15px}
   .cs-sec-heading{font-size:24px}
   .cs-feature-grid{grid-template-columns:1fr}
+  .cs-showcase{grid-template-columns:1fr 1fr}
   .cs-terminal{font-size:11px;padding:16px}
   .cs-meta-bar .btn{flex:1 1 0;justify-content:center}
 }
@@ -548,6 +557,7 @@ img{max-width:100%;height:auto;display:block}
   .cs-nav-list{grid-template-columns:1fr}
   .cs-content-body{gap:44px}
   .cs-feature-card{padding:18px}
+  .cs-showcase{grid-template-columns:1fr}
   .cs-terminal{overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere}
   .footer-minimal{align-items:flex-start;flex-direction:column}
 }

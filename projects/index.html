@@ -163,7 +163,7 @@
     <div class="reveal">
       <div class="eyebrow"><span class="pulse-dot"></span>Selected Builds</div>
       <h1>All <span class="gradient-text">Projects.</span></h1>
-      <p class="hero-text">Every full-stack app, developer tool, and API experiment I've shipped — filter by stack to find what you're looking for.</p>
+      <p class="hero-text">Every web app, Android product, developer tool, and API experiment I've shipped — filter by stack to find what you're looking for.</p>
     </div>
   </section>
 
@@ -171,12 +171,39 @@
     <div class="filter-bar reveal" role="tablist" aria-label="Filter projects">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="nextjs">Next.js</button>
+      <button class="filter-btn" data-filter="android">Android</button>
       <button class="filter-btn" data-filter="python">Python</button>
       <button class="filter-btn" data-filter="web">HTML / CSS / JS</button>
       <button class="filter-btn" data-filter="api">API</button>
     </div>
 
     <div class="project-grid" id="project-grid">
+
+      <!-- BakiLedger -->
+      <article class="p-card reveal" data-categories="android offline">
+        <div class="p-card-info">
+          <h3>BakiLedger</h3>
+          <div class="p-tags">
+            <span>Kotlin</span><span>Jetpack Compose</span><span>Material 3</span><span>Android</span>
+          </div>
+          <p class="p-desc">An offline-first Android ledger designed to make everyday dues, payments, and balances simple to track without an account or internet connection.</p>
+        </div>
+        <div class="p-card-detail">
+          <div class="detail-block"><span class="lbl">problem</span><p>Personal baki is commonly managed through memory, notebooks, or scattered notes, making it easy to lose track of payments and current balances.</p></div>
+          <div class="detail-block"><span class="lbl">solution</span><p>Built a focused local ledger for shops or people with opening balances, due/payment records, transaction history, daily summaries, search, backup/restore, and export tools.</p></div>
+          <div class="detail-block"><span class="lbl">learned</span><p>Jetpack Compose, local JSON persistence, reliable file-based backup flows, CSV/PDF generation, and keeping an offline product lightweight and easy to use.</p></div>
+        </div>
+        <div class="p-links">
+          <a href="https://bakiledger.amwafy.xyz/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Product Site
+          </a>
+          <a href="../casestady/bakiledger/">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            Case Study
+          </a>
+        </div>
+      </article>
 
       <!-- WafyShield -->
       <article class="p-card reveal" data-categories="nextjs web security">

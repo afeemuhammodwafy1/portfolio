@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BakiLedger — Case Study | Afee Muhammod Wafy</title>
+<meta name="description" content="BakiLedger case study by Afee Muhammod Wafy — an offline-first Android app designed to make everyday dues, payments, and balances easier to manage.">
+<meta name="author" content="Afee Muhammod Wafy">
+<link rel="canonical" href="https://afeemuhammodwafy.com/casestady/bakiledger/">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="noise" aria-hidden="true"></div>
+<div class="spotlight" aria-hidden="true"></div>
+<a href="#main" class="visually-hidden">Skip to content</a>
+
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="Afee Muhammod Wafy home">WAFY</a>
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    <a href="../../#about">About</a>
+    <a href="../../#skills">Skills</a>
+    <a href="../../projects/">Projects</a>
+    <a href="../../#experience">Experience</a>
+    <a href="../../#education">Education</a>
+    <a href="../../#contact">Contact</a>
+  </nav>
+  <a class="nav-cta" href="../../Resume.pdf" target="_blank" rel="noopener">Resume
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+  </a>
+  <button class="menu-btn" id="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<div class="mobile-menu" id="nav-links" aria-hidden="true">
+  <a href="../../#about">About</a>
+  <a href="../../#skills">Skills</a>
+  <a href="../../projects/">Projects</a>
+  <a href="../../#experience">Experience</a>
+  <a href="../../#education">Education</a>
+  <a href="../../#contact">Contact</a>
+  <a href="../../Resume.pdf" target="_blank" rel="noopener" class="resume-link">Resume</a>
+</div>
+
+<main id="main" class="cs-page">
+  <div class="section-shell">
+    <a href="../../projects/" class="cs-top-back">← Back to Builds</a>
+
+    <div class="cs-badge-row">Android Product Design</div>
+    <h1 class="cs-title">BakiLedger</h1>
+    <p class="cs-lead">An offline-first Android app for keeping everyday dues, payments, and balances organized — designed around clarity, speed, privacy, and a deliberately lightweight local experience.</p>
+
+    <div class="cs-meta-bar">
+      <div class="cs-meta-info">
+        <div>Stack: <span>Kotlin / Jetpack Compose</span></div>
+        <div>Platform: <span>Android</span></div>
+        <div>Focus: <span>Offline UX / Personal Ledger</span></div>
+      </div>
+      <div class="hero-actions" style="margin:0;">
+        <a href="https://bakiledger.amwafy.xyz/" target="_blank" rel="noopener" class="btn btn-primary">Product Site <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="cs-hero-preview reveal">
+      <img src="../../assets/images/bakiledger.webp" alt="BakiLedger promotional interface preview">
+    </div>
+
+    <div class="cs-main-grid">
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-title">On This Page</div>
+        <ul class="cs-nav-list">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#problem">The Problem</a></li>
+          <li><a href="#direction">Product Direction</a></li>
+          <li><a href="#experience">Interface &amp; Experience</a></li>
+          <li><a href="#features">Core Features</a></li>
+          <li><a href="#architecture">Technical Approach</a></li>
+          <li><a href="#retrospective">Retrospective</a></li>
+        </ul>
+        <div class="cs-sidebar-title">Project Specs</div>
+        <div class="cs-specs">PLATFORM: Android<br>UI: Jetpack Compose<br>DESIGN: Material 3<br>DATA: Local JSON<br>NETWORK: Not required</div>
+      </aside>
+
+      <div class="cs-content-body">
+        <section id="overview" class="cs-section reveal">
+          <span class="cs-sec-num">01 · Overview</span>
+          <h2 class="cs-sec-heading">Turning an everyday tracking problem into a focused product.</h2>
+          <p><strong>BakiLedger</strong> is a lightweight Android ledger built for people who want a clear record of money they owe or are owed without adopting a full accounting system.</p>
+          <p>The product keeps the core interaction simple: create a shop or person, set an opening balance when needed, record dues and payments, then check the current balance at any time.</p>
+        </section>
+
+        <section id="problem" class="cs-section reveal">
+          <span class="cs-sec-num">02 · The Problem</span>
+          <h2 class="cs-sec-heading">The hard part was not accounting. It was keeping the record understandable.</h2>
+          <p>Everyday baki is often maintained through memory, notebooks, chat messages, or scattered notes. These methods can work for a while, but they make it harder to answer a basic question quickly: <strong>what is the balance right now?</strong></p>
+          <p>I approached BakiLedger as a small, focused product rather than a complete business accounting suite. That decision kept the experience centered on the user's immediate task instead of adding features that were not necessary for personal tracking.</p>
+        </section>
+
+        <section id="direction" class="cs-section reveal">
+          <span class="cs-sec-num">03 · Product Direction</span>
+          <h2 class="cs-sec-heading">Clarity first. Speed second. Complexity last.</h2>
+          <div class="cs-feature-grid">
+            <div class="cs-feature-card"><h4>Clear Balances</h4><p>The current due stays visible so users do not need to reconstruct the balance from individual transactions.</p></div>
+            <div class="cs-feature-card"><h4>Fast Recording</h4><p>Due and payment actions are kept close to the shop or person record to reduce unnecessary navigation.</p></div>
+            <div class="cs-feature-card"><h4>Private by Design</h4><p>The app is offline-first, keeping everyday ledger data on the device unless the user chooses to export or back it up.</p></div>
+          </div>
+        </section>
+
+        <section id="experience" class="cs-section reveal">
+          <span class="cs-sec-num">04 · Interface &amp; Experience</span>
+          <h2 class="cs-sec-heading">A compact interface built around the balance.</h2>
+          <p>The visual direction uses a restrained Material 3 system with a green accent, generous spacing, clear hierarchy, and lightweight surfaces. The goal was to make the app feel calm and practical rather than like a traditional accounting dashboard.</p>
+          <p>The screens below show the core product flow from shop records and transaction actions to settings and data management.</p>
+
+          <div class="cs-showcase-wide reveal">
+            <img src="../../assets/images/bakiledger.webp" alt="BakiLedger visual design overview" loading="lazy">
+          </div>
+
+          <div class="cs-showcase">
+          </div>
+        </section>
+
+        <section id="features" class="cs-section reveal">
+          <span class="cs-sec-num">05 · Core Features</span>
+          <h2 class="cs-sec-heading">Small set of features, complete everyday workflow.</h2>
+          <ul class="cs-list">
+            <li><strong>Multiple records:</strong> Keep separate balances for different shops or people.</li>
+            <li><strong>Due &amp; payment tracking:</strong> Record additions and payments with exact timestamps and optional notes.</li>
+            <li><strong>Opening balance:</strong> Start a record from an existing amount without manually recreating old transactions.</li>
+            <li><strong>History &amp; summaries:</strong> Review transaction history and see daily changes at a glance.</li>
+            <li><strong>Backup &amp; restore:</strong> Export a full JSON backup and restore it later with replace or merge options.</li>
+            <li><strong>Data export:</strong> Generate CSV data and shop-wise PDF statements when a shareable record is needed.</li>
+          </ul>
+        </section>
+
+        <section id="architecture" class="cs-section reveal">
+          <span class="cs-sec-num">06 · Technical Approach</span>
+          <h2 class="cs-sec-heading">Local-first architecture without unnecessary infrastructure.</h2>
+          <p>BakiLedger uses <strong>Kotlin, Jetpack Compose, and Material 3</strong>. Instead of introducing a database for this product's scope, application data is stored in a private JSON file inside app storage.</p>
+          <div class="cs-terminal">APP UI → ViewModel → Local JSON Store
+
+Shop: id · name · phone · address · createdAt
+Transaction: id · shopId · amount · type · note · timestamp
+
+Balance = Opening Balance + Due − Payments</div>
+          <p>This keeps the application independent of a backend and avoids requiring an internet connection for normal use. Backup and restore are explicit user actions rather than an invisible synchronization layer.</p>
+        </section>
+
+        <section id="retrospective" class="cs-section reveal">
+          <span class="cs-sec-num">07 · Retrospective</span>
+          <h2 class="cs-sec-heading">What this project taught me.</h2>
+          <p>BakiLedger expanded my work beyond web development into Android product development, where interaction details and state management become especially important on a small screen.</p>
+          <p>The project also reinforced a useful product lesson: a smaller feature set can create a stronger experience when every feature supports the primary task. Designing the app around a clear balance, predictable transactions, and user-controlled data kept the product focused from interface to architecture.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer-minimal section-shell">
+  <p>© <span id="year"></span> Afee Muhammod Wafy — Bangladesh.</p>
+  <a href="../../projects/">Back to Projects</a>
+</footer>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<button class="to-top" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+</body>
+</html>
