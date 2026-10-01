@@ -196,7 +196,6 @@ img{max-width:100%;height:auto;display:block}
 .timeline-item{display:grid;grid-template-columns:90px 64px 1fr;min-height:220px;position:relative}
 .timeline-date-wrap{padding-top:0;display:flex;flex-direction:column;gap:6px}
 .timeline-date{color:var(--muted-2);font-size:10px;font-weight:800;letter-spacing:.12em;padding-top:4px;white-space:nowrap}
-.timeline-status{display:inline-flex;width:max-content;color:var(--accent);font-size:9px;font-weight:800;letter-spacing:.12em;border:1px solid rgba(184,255,90,.18);background:rgba(184,255,90,.06);border-radius:999px;padding:5px 7px}
 .timeline-dot{width:11px;height:11px;border-radius:50%;border:2px solid #555966;background:var(--bg);margin:2px auto 0;z-index:2}
 .timeline-item.active .timeline-dot{border-color:var(--accent);background:var(--accent);box-shadow:0 0 0 5px rgba(184,255,90,.08)}
 .timeline-content{min-width:0;padding-bottom:18px}
@@ -210,7 +209,7 @@ img{max-width:100%;height:auto;display:block}
 .experience-tags{display:flex;flex-wrap:wrap;gap:7px}
 .experience-tags span{color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.02em;border:1px solid var(--line);border-radius:999px;padding:6px 9px;background:rgba(255,255,255,.015)}
 .edu-group{color:var(--accent)!important;font-size:11px!important;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px!important}
-.education-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:80px}
+.education-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:80px}\n.education-layout > .timeline{max-width:900px;margin-left:auto}
 .cert-list{display:grid;gap:10px}
 .cert-card{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:19px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.02)}
 .cert-card h4{margin:0 0 4px;font-family:var(--display);font-size:14px}
