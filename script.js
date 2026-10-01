@@ -99,6 +99,35 @@
     type();
   }
 
+
+  /* ---------- experience duration ---------- */
+  var experienceDuration = document.getElementById('experience-duration');
+  if(experienceDuration){
+    var experienceStart = new Date(2026, 9, 1); // October 1, 2026
+    var now = new Date();
+    var years = now.getFullYear() - experienceStart.getFullYear();
+    var months = now.getMonth() - experienceStart.getMonth();
+
+    if(now.getDate() < experienceStart.getDate()){
+      months--;
+    }
+    if(months < 0){
+      years--;
+      months += 12;
+    }
+
+    var totalMonths = Math.max(0, years * 12 + months);
+    // Keep the presentation aligned with LinkedIn-style experience labels.
+    if(totalMonths === 0) totalMonths = 1;
+
+    var durationYears = Math.floor(totalMonths / 12);
+    var durationMonths = totalMonths % 12;
+    var durationParts = [];
+    if(durationYears) durationParts.push(durationYears + (durationYears === 1 ? ' yr' : ' yrs'));
+    if(durationMonths) durationParts.push(durationMonths + (durationMonths === 1 ? ' mo' : ' mos'));
+    experienceDuration.textContent = durationParts.join(' ') || '1 mo';
+  }
+
   /* ---------- contact form (Formspree) ---------- */
   var form = document.getElementById('contact-form');
   if(form){

@@ -192,13 +192,23 @@ img{max-width:100%;height:auto;display:block}
 
 /* ---------- Timeline / Education ---------- */
 .timeline{position:relative;max-width:900px;margin-left:auto}
-.timeline-line{position:absolute;left:122px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--accent),var(--line) 35%,var(--line))}
-.timeline-item{display:grid;grid-template-columns:90px 64px 1fr;min-height:150px;position:relative}
-.timeline-date{color:var(--muted-2);font-size:10px;font-weight:800;letter-spacing:.12em;padding-top:4px}
+.timeline-line{position:absolute;left:122px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--accent),var(--line) 42%,var(--line))}
+.timeline-item{display:grid;grid-template-columns:90px 64px 1fr;min-height:220px;position:relative}
+.timeline-date-wrap{padding-top:0;display:flex;flex-direction:column;gap:6px}
+.timeline-date{color:var(--muted-2);font-size:10px;font-weight:800;letter-spacing:.12em;padding-top:4px;white-space:nowrap}
+.timeline-status{display:inline-flex;width:max-content;color:var(--accent);font-size:9px;font-weight:800;letter-spacing:.12em;border:1px solid rgba(184,255,90,.18);background:rgba(184,255,90,.06);border-radius:999px;padding:5px 7px}
 .timeline-dot{width:11px;height:11px;border-radius:50%;border:2px solid #555966;background:var(--bg);margin:2px auto 0;z-index:2}
 .timeline-item.active .timeline-dot{border-color:var(--accent);background:var(--accent);box-shadow:0 0 0 5px rgba(184,255,90,.08)}
-.timeline-item h3{font-family:var(--display);font-size:24px;letter-spacing:-.03em;margin:0 0 9px}
-.timeline-item p{color:var(--muted);line-height:1.65;font-size:14px;max-width:560px;margin:0}
+.timeline-content{min-width:0;padding-bottom:18px}
+.experience-heading-row{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:9px}
+.experience-label{color:var(--muted-2)!important;font-size:9px!important;font-weight:800!important;letter-spacing:.14em!important;text-transform:uppercase;margin:0 0 5px!important}
+.timeline-item h3{font-family:var(--display);font-size:28px;letter-spacing:-.035em;margin:0}
+.experience-badge{flex:0 0 auto;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:7px 10px}
+.experience-duration{display:flex;align-items:center;gap:7px;color:var(--muted-2)!important;font-size:12px!important;line-height:1.4!important;margin:0 0 15px!important}
+.experience-duration span:last-child{color:var(--muted)!important;font-weight:600}
+.experience-description{color:var(--muted);line-height:1.7;font-size:14px;max-width:620px;margin:0 0 16px}
+.experience-tags{display:flex;flex-wrap:wrap;gap:7px}
+.experience-tags span{color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.02em;border:1px solid var(--line);border-radius:999px;padding:6px 9px;background:rgba(255,255,255,.015)}
 .edu-group{color:var(--accent)!important;font-size:11px!important;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px!important}
 .education-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:80px}
 .cert-list{display:grid;gap:10px}
@@ -485,8 +495,11 @@ img{max-width:100%;height:auto;display:block}
   .detail-block{padding:14px 16px}
 
   .timeline-line{left:80px}
-  .timeline-item{grid-template-columns:62px 38px 1fr;min-height:170px}
-  .timeline-item h3{font-size:20px}
+  .timeline-item{grid-template-columns:62px 38px 1fr;min-height:210px}
+  .timeline-item h3{font-size:22px}
+  .experience-heading-row{gap:12px}
+  .experience-badge{font-size:9px;padding:6px 8px}
+  .experience-tags span{font-size:9px;padding:5px 8px}
   .education-layout{gap:45px}
   .form-row{grid-template-columns:1fr}
   .contact-section{padding:38px 24px;min-height:0;border-radius:24px}
